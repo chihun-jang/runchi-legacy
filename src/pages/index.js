@@ -1,11 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const IndexPage = ({data}) => (
+  console.log(data),
   <Layout>
     <SEO title="Home" />
     <h1>메인페이지 타이틀을 답니다.</h1>
@@ -14,8 +15,46 @@ const IndexPage = () => (
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
+
+
+    <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+    {data.allMarkdownRemark.edges.map(({ node }) => (
+      <div key={node.id}>
+        <Link
+          to={node.fields.slug}
+        
+        >
+        <h3>
+          {node.frontmatter.title}{" "}
+   
+        </h3>
+        <p>{node.excerpt}</p>
+        </Link>
+
+      </div>
+    ))}
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
+
+export const query = graphql`
+query MyQuery {
+  allMarkdownRemark {
+    totalCount
+    edges {
+      node {
+        id
+        excerpt
+        frontmatter {
+          title
+        }
+          fields {
+            slug
+          }
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
