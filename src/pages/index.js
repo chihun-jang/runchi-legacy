@@ -26,7 +26,7 @@ const IndexPage = ({data}) => (
         >
         <h3>
           {node.frontmatter.title}{" "}
-   
+            <p>{node.frontmatter.date}{" "}</p>
         </h3>
         <p>{node.excerpt}</p>
         </Link>
@@ -47,6 +47,7 @@ query MyQuery {
         excerpt
         frontmatter {
           title
+          date
         }
           fields {
             slug
