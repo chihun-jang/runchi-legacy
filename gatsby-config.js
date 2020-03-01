@@ -7,19 +7,23 @@ module.exports = {
     plugins: [
    
         `gatsby-plugin-react-helmet`,
+       
+        // 파일 인식 플러그인
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
                 path: `${__dirname}/src/images`,
             },
-        },
-        // 파일 인식 플러그인
-        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `src`,
-                path: `${__dirname}/src/`,
+                path: `${__dirname}/src/`, 
+            },
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `src`,
+                path: `${__dirname}/src/posts`,
             },
         },
 
@@ -39,9 +43,7 @@ module.exports = {
                 display: `minimal-ui`,
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
-
-
-
+            // 아래는 markdown inline image를 위한 plugin
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
@@ -57,6 +59,8 @@ module.exports = {
                     },
                 ],
             },
+        
+            
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline

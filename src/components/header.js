@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import main from '../styles/main.module.css'
 
 const Header = ({ siteTitle }) => (
   <header
@@ -28,6 +29,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    <div className={main.sidenav}>≡</div>
   </header>
 )
 

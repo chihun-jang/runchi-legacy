@@ -2,37 +2,35 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import ProfileImage from "../components/profile_image"
+import ProfileBox from '../components/profile_box'
 import SEO from "../components/seo"
-
+import main from '../styles/main.module.css'
 const IndexPage = ({data}) => (
   console.log(data),
   <Layout>
     <SEO title="Home" />
+
+    <ProfileBox></ProfileBox>
+
     <h1>메인페이지 타이틀을 답니다.</h1>
-    <p>벽에 그리는 키처럼 제 삶을 기록하는 곳입니다.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    
+    
 
 
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
-        <Link
-          to={node.fields.slug}
-        
-        >
-        <h3>
+        <Link to={node.fields.slug} >
+          <h2 className={main.main_post_title}>
           {node.frontmatter.title}{" "}
-            <p>{node.frontmatter.date}{" "}</p>
-        </h3>
-        <p>{node.excerpt}</p>
+          </h2>
+        <p className={main.main_post_date}>{node.frontmatter.date}{" "}</p>
         </Link>
 
       </div>
     ))}
+
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
