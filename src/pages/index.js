@@ -2,7 +2,6 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import ProfileImage from "../components/profile_image"
 import ProfileBox from '../components/profile_box'
 import SEO from "../components/seo"
 import main from '../styles/main.module.css'
