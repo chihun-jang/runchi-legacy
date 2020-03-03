@@ -35,7 +35,10 @@ Django기준으로는
 CSS의 경로뒤에 querystring을 붙여주면 브라우저가 새로운 file로 인식하여 최산화를 시켜준다고 했다.   
 (static 파일을 참조하는 url주소를 다르게 하여 캐싱을 막는다고 했다)
 
->```<link rel="stylesheet" type="text/css" href="style.css?v=1.0" />```
+
+```html
+<link rel="stylesheet" type="text/css" href="style.css?v=1.0" />
+```
 
 위와 같이 ?v=1.0 을 css 뒤에 붙여주면 되는데   
 v=1.0 , v=1.1 이렇게 업데이트 때마다 변경해주기 번거롭다.   
