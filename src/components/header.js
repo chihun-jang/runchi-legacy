@@ -6,8 +6,9 @@ import main from '../styles/main.module.css'
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `black`,
+      background: `none`,
       marginBottom: `1.45rem`,
+      color:`black`,
     }}
   >
     <div
@@ -21,7 +22,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `black`,
             textDecoration: `none`,
           }}
         >

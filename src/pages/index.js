@@ -1,10 +1,13 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Button from '@material-ui/core/Button';
 
 import Layout from "../components/layout"
 import ProfileBox from '../components/profile_box'
 import SEO from "../components/seo"
 import main from '../styles/main.module.css'
+
+
 const IndexPage = ({data}) => (
   console.log(data),
   <Layout>
@@ -14,7 +17,8 @@ const IndexPage = ({data}) => (
 
     <h1>메인페이지 타이틀을 답니다.</h1>
     
-    
+   
+
 
 
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
