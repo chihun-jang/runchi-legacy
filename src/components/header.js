@@ -4,11 +4,11 @@ import React from "react"
 import main from '../styles/main.module.css'
 
 const Header = ({ siteTitle }) => (
-  <header
+  <header 
     style={{
-      background: `none`,
+      background: `black`,
       marginBottom: `1.45rem`,
-      color:`black`,
+      color:`white`,
     }}
   >
     <div
@@ -18,19 +18,24 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ margin: 0,display:'inline-block' }} >
         <Link
           to="/"
           style={{
-            color: `black`,
+            color: `white`,
             textDecoration: `none`,
           }}
         >
           {siteTitle}
         </Link>
       </h1>
+      <h6 className={main.gnb_compo}>
+          about
+      </h6>
+      <h6 className={main.gnb_compo}>
+          posting
+      </h6>
     </div>
-    <div className={main.sidenav}>≡</div>
   </header>
 )
 

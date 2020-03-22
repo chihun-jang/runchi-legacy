@@ -26,16 +26,7 @@
     font-size:1.2rem;
 }
 
-.sidenav{
-    color:black;
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-    top:15px;
-    font-size:3rem;
-    font-weight: 800;
-    cursor: pointer;
-}
+
 .profile_box{
     position: fixed;
     right:20px;
@@ -44,7 +35,10 @@
     padding:10px;
 
 }
-
+.gnb_compo{
+    display: inline-block;
+    margin:0 10px;
+}
 @media(max-width:1024px){
     .profile_box{
     
