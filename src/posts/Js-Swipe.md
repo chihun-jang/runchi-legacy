@@ -1,5 +1,5 @@
 ---
-title: "Vanila-JS-Swipe"
+title: "Vanilla-JS-Swipe"
 date: "2020-03-28"
 tag: "JS"
 ---
