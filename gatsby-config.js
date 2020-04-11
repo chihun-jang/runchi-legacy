@@ -2,8 +2,8 @@ module.exports = {
     siteMetadata: {
         title: `벽에 그린 나의 키`,
         description: `블로그 설명이 들어가는 부분`,
-        author: `chichi`,
-        // sityUrl:''
+        author: `runchi`,
+        sityUrl:'runchi.com'
     },
     plugins: [
         {
