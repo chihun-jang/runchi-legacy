@@ -30,7 +30,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <h6 className={main.gnb_compo}>
-          about
+          about-runchi
       </h6>
       <h6 className={main.gnb_compo}>
           posting
