@@ -1,6 +1,8 @@
 ---
 title: 'OS-System_Structure'
 date: '2020-03-03'
+category: Os
+
 ---
 
 출근하면서 들었던 kocw OS  강의(이화여대 반효경 교수님)를 정리해봅니다

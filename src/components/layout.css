@@ -623,10 +623,10 @@ pre tt:after {
 }
 
 
-/* 커스텀 layout */
+
 :not(pre) > code[class*="language-"], pre[class*="language-"]{
   background-color: #000000b4;
-
+  white-space: pre-line;
 }
 
 code[class*="language-"]{

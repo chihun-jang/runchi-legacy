@@ -1,7 +1,7 @@
 ---
 title: "Deploy WebSite Cache Problem"
 date: "2020-02-29"
-category: deploy,css
+category: Deploy,Css
 ---
 
 # CSS versioning (브라우저 캐싱 방지)

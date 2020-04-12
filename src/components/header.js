@@ -29,11 +29,14 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <Link to="/about-me/"> 
       <h6 className={main.gnb_compo}>
-          about-runchi
+        about me
       </h6>
+      </Link>
+     
       <h6 className={main.gnb_compo}>
-          posting
+          category
       </h6>
     </div>
   </header>

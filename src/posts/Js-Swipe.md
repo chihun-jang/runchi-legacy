@@ -1,7 +1,7 @@
 ---
 title: "Vanilla-JS-Swipe"
 date: "2020-03-28"
-tag: "JS"
+category: Javascript
 ---
 모바일에서 swipe를 구현하기 위해 Stackoverflow를 찾아보니
 

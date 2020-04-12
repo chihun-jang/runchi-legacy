@@ -1,7 +1,7 @@
 ---
 title: "Float를 이용한 positioning Tip"
 date: "2020-03-10"
-tag: 'CSS'
+category: Css
 ---
 
 # float를 활용한 positioning에 유용한 tip

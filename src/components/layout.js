@@ -34,11 +34,12 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
+        
+        {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="">chihun</a>
-        </footer>
+        </footer> */}
       </div>
     </>
   )
