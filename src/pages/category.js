@@ -10,6 +10,10 @@ const CategoryPage = () => {
     const category = useStaticQuery(graphql`
     query CategoryQuery{
             allMarkdownRemark(limit: 1000) {
+            group(field: frontmatter___category) {
+                fieldValue
+                totalCount
+                }
             totalCount
             edges {
             node {
@@ -30,15 +34,16 @@ const CategoryPage = () => {
     }
   `)
 
-  
+
     return (
         <Layout>
             <SEO title="Category" />
             <h1>목차-Category</h1>
             <p>목차를 하자</p>
-
             {category.allMarkdownRemark.edges.map(({ node }) => (
-                <div>{node.frontmatter.category}</div>
+                <Link to={node.frontmatter.category}>
+                    <div>{node.frontmatter.category}</div>
+                </Link>
             ))}
         </Layout>
     )

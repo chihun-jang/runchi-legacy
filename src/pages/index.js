@@ -26,7 +26,7 @@ const IndexPage = ({data}) => (
           <h2 className={main.main_post_title}>
           {node.frontmatter.title} - {node.frontmatter.category}
           </h2><br></br>
-        <p className={main.main_post_date}>{node.frontmatter.date}{" "}</p>
+          <p className={main.main_post_date}>{node.frontmatter.date}{" "}</p>
         </Link>
         <div dangerouslySetInnerHTML={{ __html: node.html }} />
       </div>
