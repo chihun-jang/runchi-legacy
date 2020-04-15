@@ -7,32 +7,16 @@ import SEO from "../components/seo"
 const CategoryPage = () => {
 
 
-    const category = useStaticQuery(graphql`
-    query CategoryQuery{
-            allMarkdownRemark(limit: 1000) {
-            group(field: frontmatter___category) {
-                fieldValue
-                totalCount
-                }
-            totalCount
-            edges {
-            node {
-                id
-                excerpt
-                html
-                frontmatter {
-                title
-                date
-                category
-                }
-                fields {
-                    slug
-                }
+    const categories = useStaticQuery(graphql`
+        {
+            allMarkdownRemark {
+                group(field: frontmatter___category) {
+                    fieldValue
+                    totalCount
                 }
             }
         }
-    }
-  `)
+    `)
 
 
     return (
@@ -40,9 +24,11 @@ const CategoryPage = () => {
             <SEO title="Category" />
             <h1>목차-Category</h1>
             <p>목차를 하자</p>
-            {category.allMarkdownRemark.edges.map(({ node }) => (
-                <Link to={node.frontmatter.category}>
-                    <div>{node.frontmatter.category}</div>
+            {categories.allMarkdownRemark.group.map(category => (
+                <Link to={category.fieldValue}>
+                    <div>
+                        {category.fieldValue}({category.totalCount})
+                    </div>
                 </Link>
             ))}
         </Layout>
