@@ -3,7 +3,7 @@ module.exports = {
         title: `벽에 그린 나의 키`,
         description: `특별할 것 없는 일상이 있는 곳입니다.`,
         author: `runchi`,
-        siteUrl:'https://runchi.com',
+        siteUrl: 'https://runchi.com',
         // icon:'', 내 파비콘의 위치를 작성해주자
         // keyword : ['키워드입력'],
         // comment:{
@@ -33,8 +33,6 @@ module.exports = {
                 path: `${__dirname}/src/posts`,
             },
         },
-
-       
 
         // 아래는 markdown inline image를 위한 plugin
         {
@@ -74,13 +72,11 @@ module.exports = {
                     //         wrapperStyle: `margin-bottom: 1.0725rem`,
                     //     },
                     // },
-                   
-                   
 
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
-                            inlineCodeMarker: "%",
+                            inlineCodeMarker: '%',
                             showLineNumbers: false,
                         },
                     },
@@ -92,7 +88,7 @@ module.exports = {
             },
         },
 
-         // GA
+        // GA
         // {
         //     resolve: `gatsby-plugin-google-analytics`,
         //     options: {
@@ -111,6 +107,15 @@ module.exports = {
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
         },
+
+
+        // 아래는 타이포 그래피 관련 플러그인
+        {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+                pathToConfigModule: `src/utils/typography`,
+            },
+        },
         // 이건 다이나믹 head
         `gatsby-plugin-react-helmet`,
 
@@ -127,7 +132,6 @@ module.exports = {
         // `gatsby-plugin-sass`,
         // `gatsby-plugin-lodash`,
         // `gatsby-plugin-feed`,
-
 
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline

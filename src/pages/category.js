@@ -4,12 +4,12 @@ import { useStaticQuery,Link,graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = () => {
+const CategoryPage = () => {
 
 
-    const data = useStaticQuery(graphql`
-    query {
-            allMarkdownRemark {
+    const category = useStaticQuery(graphql`
+    query CategoryQuery{
+            allMarkdownRemark(limit: 1000) {
             totalCount
             edges {
             node {
@@ -31,18 +31,17 @@ const SecondPage = () => {
   `)
 
   
-    return <Layout>
-        <SEO title="Category" />
-        <h1>목차-Category</h1>
-        <p>목차를 하자</p>
+    return (
+        <Layout>
+            <SEO title="Category" />
+            <h1>목차-Category</h1>
+            <p>목차를 하자</p>
 
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-                    <div>
-                        {node.frontmatter.category}
-                    </div>
-            
-        ))}
-    </Layout>
+            {category.allMarkdownRemark.edges.map(({ node }) => (
+                <div>{node.frontmatter.category}</div>
+            ))}
+        </Layout>
+    )
   
 }
 
@@ -56,4 +55,4 @@ const SecondPage = () => {
     async>
 </script> */}
 
-export default SecondPage
+export default CategoryPage
