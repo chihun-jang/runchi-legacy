@@ -6,9 +6,10 @@ import main from '../styles/main.module.css'
 const Header = ({ siteTitle }) => (
   <header 
     style={{
-      background: `black`,
+      border:'1px solid red',
       marginBottom: `1.45rem`,
-      color:`white`,
+      color:`black`,
+      display:'inline-block',
     }}
   >
     <div
@@ -22,7 +23,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `black`,
             textDecoration: `none`,
           }}
         >
@@ -34,10 +35,11 @@ const Header = ({ siteTitle }) => (
         about me
       </h6>
       </Link>
-     
+      <Link to="/category/"> 
       <h6 className={main.gnb_compo}>
           category
       </h6>
+      </Link>
     </div>
   </header>
 )

@@ -4,7 +4,6 @@ date: "2020-03-10"
 category: Css
 ---
 
-# float를 활용한 positioning에 유용한 tip
 
 웹 퍼블리싱을 하다보면 컴포넌트를 적재적소에 배치시키고 싶을때가 아주아주아주 많다.
 

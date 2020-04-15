@@ -4,7 +4,6 @@ date: "2020-02-29"
 category: Deploy,Css
 ---
 
-# CSS versioning (브라우저 캐싱 방지)
 
 **웹 퍼블리싱을 하다보면 CSS 수정사항이 바로 바로 반영되지 않는 경우**가 있다.
 

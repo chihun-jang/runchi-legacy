@@ -4,7 +4,6 @@ date: "2020-02-27"
 category: Markdown
 ---
 
-# MarkDown 문법
 
 안녕하세요!!
 

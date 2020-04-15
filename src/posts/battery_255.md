@@ -5,7 +5,6 @@ category: 일상
 
 ---
 
-# 노트북 배터리 없음, 노트북 배터리 255%
 
 ![](../images/run_s_key.jpg)
 

@@ -369,3 +369,22 @@ html{
 
 
 /* 커스텀 layout */
+.gnb_compo{
+    display: inline-block;
+    margin:0 10px;
+    color:black;
+}
+
+
+
+
+
+:not(pre) > code[class*="language-"], pre[class*="language-"]{
+  background-color: #000000b4;
+  white-space: pre-line;
+}
+
+code[class*="language-"]{
+  color:white;
+}
+

@@ -8,7 +8,7 @@ import main from '../styles/main.module.css'
 
 
 const IndexPage = ({data}) => (
-  console.log(data),
+  // console.log(data),
   <Layout>
     <SEO title="Home" />
 

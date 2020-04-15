@@ -5,3 +5,7 @@ category: Git
 ---
 
 revert, 이름바꾸기
+
+gatsby의 prettierrc의 역할
+
+.eslintrc.js
