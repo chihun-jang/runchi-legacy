@@ -1,4 +1,4 @@
-import React,{useState} from "react"
+import React,{useState, Fragment} from "react"
 import { Link, graphql } from "gatsby"
 import Button from '@material-ui/core/Button';
 
@@ -8,79 +8,82 @@ import main from '../styles/main.module.css'
 
 
 const IndexPage = ({ data }) => {
-    const emptyQuery = ""
-    const [state, setState] = useState({
-      filteredData: [],
-      query: emptyQuery,
-    })
+    // const emptyQuery = ""
+    // const [state, setState] = useState({
+    //   filteredData: [],
+    //   query: emptyQuery,
+    // })
     
     const allPosts = data.allMarkdownRemark.edges
-    const { filteredData, query } = state
+    // const { filteredData, query } = state
 
-    const hasSearchResults = filteredData && query !== emptyQuery
+    // const hasSearchResults = filteredData && query !== emptyQuery
 
-    const posts = hasSearchResults ? filteredData : allPosts
+    // const posts = hasSearchResults ? filteredData : allPosts
 
     
-    const handleInputChange = event => {
-      console.log(event.target.value)
-        const query = event.target.value
-        // this is how we get all of our posts
-        const posts = data.allMarkdownRemark.edges || []
-        // return all filtered posts
-        const filteredData = posts.filter(post => {
-            // destructure data from post frontmatter
-            const {title, category } = post.node.frontmatter
-            return (
-                // standardize data with .toLowerCase()
-                // return true if the description, title or tags
-                // contains the query string
-                title.toLowerCase().includes(query.toLowerCase()) ||
-                category.toLowerCase().includes(query.toLowerCase()) 
-                // (tags &&
-                //     tags
-                //         .join('') // convert tags from an array to string
-                //         .toLowerCase()
-                //         .includes(query.toLowerCase()))
-            )
-        })
-        // update state according to the latest query and results
-        setState({
-            query, // with current query string from the `Input` event
-            filteredData, // with filtered data from posts.filter(post => (//filteredData)) above
-        })
-    }
+    // const handleInputChange = event => {
+    //     const query = event.target.value
+    //     const posts = data.allMarkdownRemark.edges || []
+    //     const filteredData = posts.filter(post => {
+    //         // destructure data from post frontmatter
+    //         const {title, category } = post.node.frontmatter
+    //         return (
+              
+    //             title.toLowerCase().includes(query.toLowerCase()) ||
+    //             category.toLowerCase().includes(query.toLowerCase()) 
+    //             // (tags &&
+    //             //     tags
+    //             //         .join('') // convert tags from an array to string
+    //             //         .toLowerCase()
+    //             //         .includes(query.toLowerCase()))
+    //         )
+    //     })
+    //     setState({
+    //         query, 
+    //         filteredData, 
+    //     })
+    // }
 
   return (
       <Layout>
           <SEO title="Home" />
 
-          <h1>전체 글 목록</h1>
+        <h2 className={main.main_title}>
+        모든 글
+        </h2>
+        <span className={main.main_postcnt}>({allPosts.length} Posts)</span>
+      
 
-          <input
+          {/* <input
               type="text"
-              placeholder="Type to filter posts..."
+              placeholder="검색해보세요!"
               onChange={handleInputChange}
-          />
+          /> */}
 
-          <h4>{posts.length} Posts</h4>
+      
 
-          {posts.map(({ node }) => (
-              <div className={main.main_post_section} key={node.id}>
-                  <Link to={node.fields.slug}>
-                      <h2 className={main.main_post_title}>
-                          {node.frontmatter.title} - {node.frontmatter.category}
-                      </h2>
-                      <br></br>
-                      <p className={main.main_post_date}>
-                          {node.frontmatter.date}{' '}
-                      </p>
+      {allPosts.map(({ node }) => (
+              <Fragment key={node.id}>
+               
+
+                <div className={main.main_post_section} >
+                  <Link className={main.main_post_link} to={node.fields.slug}>
+
+                    <h2 className={main.main_post_title}>
+                      {node.frontmatter.title}<span>{node.frontmatter.category}</span>
+                    </h2>
+
+                    <h6 className={main.main_post_date}>
+                      > {node.frontmatter.date}
+                    </h6>
+
                   </Link>
-                  <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              </div>
+                  <div className={main.main_post_content} dangerouslySetInnerHTML={{ __html: node.html }} />
+                </div>
+              </Fragment>
           ))}
 
-          <Link to="/page-2/">Go to page 2</Link>
       </Layout>
   )
 }

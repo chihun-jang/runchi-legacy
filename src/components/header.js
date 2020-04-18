@@ -5,12 +5,8 @@ import main from '../styles/main.module.css'
 
 const Header = ({ siteTitle }) => (
   <header 
-    style={{
-      border:'1px solid red',
-      marginBottom: `1.45rem`,
-      color:`black`,
-      display:'inline-block',
-    }}
+    className={main.gnb_nav}
+    
   >
     <div
       style={{
@@ -19,14 +15,8 @@ const Header = ({ siteTitle }) => (
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0,display:'inline-block' }} >
-        <Link
-          to="/"
-          style={{
-            color: `black`,
-            textDecoration: `none`,
-          }}
-        >
+      <h1 className={main.gnb_title} >
+        <Link to="/">
           {siteTitle}
         </Link>
       </h1>

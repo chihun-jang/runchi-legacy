@@ -1,5 +1,68 @@
 
+.gnb_nav{
+    /* border:2px solid red; */
 
+}
+.gnb_title{
+    /* border:2px solid black; */
+    display: inline-block;
+     margin-right: auto;
+}
+.gnb_title > a{
+        /* color: #6A9BD8; */
+    color:dimgray;
+    letter-spacing: .2rem;
+    font-weight: 900;
+    font-size: 32px;
+
+    text-shadow: 2px 2px 4px rgba(0,0,0,.3), -2px -2px 4px rgba(255,255,255,1);
+
+    margin-right: 20px;
+
+}
+.gnb_compo{
+    display: inline-block;
+    margin:0 10px;
+    /* color: #6A9BD8; */
+    color:dimgray;
+
+    font-weight: 800;
+
+    padding:5px 10px;
+
+    border-radius: 20px;
+
+    border: 2px solid rgba(255,255,255,.3);
+    box-shadow: 4px 4px 6px 0 rgba(0,0,0,.1), -4px -4px 6px rgba(255,255,255,1);
+    border-radius:15px;
+
+    letter-spacing: .1rem;
+
+}
+.main_title{
+    /* border: 2px solid; */
+    margin-top:20px;
+
+    font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.3), -2px -2px 4px rgba(255,255,255,1);
+
+    display: inline-block;
+}
+
+.main_postcnt{
+    font-size:16px;
+    display: inline-block;
+    margin-left:10px;
+    color:#777;
+    font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0,0,0,.3), -2px -2px 4px rgba(255,255,255,1);
+
+    padding:5px 10px;
+       /* border: 2px solid rgba(255,255,255,.3);
+    box-shadow: 4px 4px 6px 0 rgba(0,0,0,.1), -4px -4px 6px rgba(255,255,255,1);
+    border-radius:15px; */
+  
+}
 .profile_box{
 
     /* border:1px solid black; */
@@ -34,19 +97,48 @@
 
 .main_post_section{
     margin: 50px 0;
-    border:2px solid black;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-sizing: border-box;
+
+    /* border:2px solid black; */
+    border-radius: 20px;
+ border: 2px solid rgba(255,255,255,.3);
+    box-shadow: 4px 4px 6px 0 rgba(0,0,0,.1), -4px -4px 6px rgba(255,255,255,1);
+}
+.main_post_link{
+    margin-bottom:50px;
+    display: block;
+    border-radius: 10px;
+    padding:20px;
+     border: 2px solid rgba(255,255,255,.3);
+    box-shadow: 4px 4px 6px 0 rgba(0,0,0,.1), -4px -4px 6px rgba(255,255,255,1);
 }
 
 .main_post_title{
     display: inline-block;
-    font-size:1.2rem;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.main_post_title > span{
+    font-size:15px;
+    color:#aaa;
+    display: inline-block;
+    margin-left:20px;
 }
 .main_post_date{
-     display: inline-block;
-    font-size:1.2rem;
+     display: block;
+    font-size:15px;
+    color:#aaa;
+    margin-bottom: 0px;
+    margin-left:10px
 }
 
 .main_post_section{
     white-space: pre-line;
+}
+.main_post_content{
+    margin: 0 20px;
 }
 
