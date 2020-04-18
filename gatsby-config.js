@@ -111,12 +111,12 @@ module.exports = {
 
         // 아래는 타이포 그래피 관련 플러그인 그런데 마땅한 타이포그래피가 없어서 일단은 내비두겠다.
         //
-        // {
-        //     resolve: `gatsby-plugin-typography`,
-        //     options: {
-        //         pathToConfigModule: `src/utils/typography`,
-        //     },
-        // },
+        {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+                pathToConfigModule: `src/utils/typography`,
+            },
+        },
         // 이건 다이나믹 head
         `gatsby-plugin-react-helmet`,
 
