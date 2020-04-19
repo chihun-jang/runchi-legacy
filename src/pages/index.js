@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import main from '../styles/main.module.css'
 
+import SVG from '../components/SVG'
 
 const IndexPage = ({ data }) => {
     // const emptyQuery = ""
@@ -75,7 +76,7 @@ const IndexPage = ({ data }) => {
                     </h2>
 
                     <h6 className={main.main_post_date}>
-                      > {node.frontmatter.date}
+                <SVG name="edit" width="20px" height="20px" color="#2f3e4d" ></SVG> {node.frontmatter.date}
                     </h6>
 
                   </Link>
