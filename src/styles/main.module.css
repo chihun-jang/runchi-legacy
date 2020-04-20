@@ -128,13 +128,15 @@
     margin-left:20px;
 }
 .main_post_date{
-     display: block;
+     display: flex;
     font-size:15px;
     color:#aaa;
     margin-bottom: 0px;
-    margin-left:10px
+    align-items: center;
 }
-
+.main_post_date > svg{
+    margin-right:10px;
+}
 .main_post_section{
     white-space: pre-line;
 }

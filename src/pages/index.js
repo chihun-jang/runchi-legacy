@@ -76,7 +76,7 @@ const IndexPage = ({ data }) => {
                     </h2>
 
                     <h6 className={main.main_post_date}>
-                <SVG name="edit" width="20px" height="20px" color="#2f3e4d" ></SVG> {node.frontmatter.date}
+                      <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
                     </h6>
 
                   </Link>
