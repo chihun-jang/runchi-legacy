@@ -670,10 +670,19 @@ body {
 :not(pre) > code[class*="language-"], pre[class*="language-"]{
   background-color: #000000b4;
   white-space: pre-line;
+  /* margin:10px 0; */
+  /* padding:5px 10px; */
 }
-
+pre[class*="language-"]{
+  padding:0;
+}
 code[class*="language-"]{
   color:white;
+  /* padding:5px 10px !important; */
+  /* margin: 10px 0; */
+  padding:5px 10px;
+  display: inline-block;
+  margin:10px 0;
 }
 
 

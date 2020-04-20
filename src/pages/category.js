@@ -3,6 +3,7 @@ import { useStaticQuery,Link,graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import category from '../styles/category.module.css'
 
 const CategoryPage = () => {
 
@@ -22,12 +23,11 @@ const CategoryPage = () => {
     return (
         <Layout>
             <SEO title="Category" />
-            <h1>목차-Category</h1>
-            <p>목차를 하자</p>
-            {categories.allMarkdownRemark.group.map(category => (
-                <Link to={category.fieldValue}>
-                    <div>
-                        {category.fieldValue}({category.totalCount})
+            <h1 className={category.category_title}>Category</h1>
+            {categories.allMarkdownRemark.group.map(item => (
+                <Link to={item.fieldValue}>
+                    <div className={category.category_item}>
+                        {item.fieldValue}({item.totalCount})
                     </div>
                 </Link>
             ))}

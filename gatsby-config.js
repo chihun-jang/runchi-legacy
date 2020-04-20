@@ -82,19 +82,22 @@ module.exports = {
                     },
                     // `gatsby-remark-copy-linked-files`,
                     // `gatsby-remark-smartypants`,
+                    
                     // `gatsby-remark-autolink-headers`,
                     // `gatsby-remark-emoji`,
                 ],
             },
         },
 
-        // GA
-        // {
-        //     resolve: `gatsby-plugin-google-analytics`,
-        //     options: {
-        //         trackingId: metaConfig.ga,
-        //     },
-        // },
+        GA
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: 164055351,
+                head: true,
+
+            },
+        },
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -131,11 +134,7 @@ module.exports = {
         `gatsby-plugin-sitemap`,
 
         // `gatsby-plugin-sass`,
-        // `gatsby-plugin-lodash`,
-        // `gatsby-plugin-feed`,
 
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        // `gatsby-plugin-offline`,
+
     ],
 }
