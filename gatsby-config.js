@@ -89,7 +89,7 @@ module.exports = {
             },
         },
 
-        GA
+        // GA
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {

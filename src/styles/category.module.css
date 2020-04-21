@@ -2,16 +2,46 @@
     font-weight: 800;
     text-shadow: 2px 2px 4px rgba(0,0,0,.3), -2px -2px 4px rgba(255,255,255,1);
     font-size:32px;
-    display: inline-block;
+    /* display: inline-block; */
+
 }
 
 .category_item{
-    width:80px;
-    height:80px;
-    display: inline-block;
+    width:90px;
+    height:90px;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin:10px;
+    /* padding:10px; */
+    box-sizing: border-box;
+
+
+    font-size:0.9rem;
+     font-weight: 800;
+    text-shadow: 2px 2px 4px rgba(0,0,0,.3), -2px -2px 4px rgba(255,255,255,1);
+
+    background: #F5F6F7;
     border-radius: 10px;
-    background: linear-gradient(145deg, #ffffff, #ddddde);
-    box-shadow:  6px 6px 12px #bfc0c1, 
-                -6px -6px 12px #ffffff;
-            
+    box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+        3px 3px 5px rgba(0, 0, 0, 0.1);
+
+        transition: all 0.2s ease-out;
+    
+    }
+
+.category_item > span{
+    font-size:0.8rem;
+    color:#aaa;
+}
+
+/* 카테고리 버튼 active시 */
+.category_item:hover{
+
+    box-shadow: inset -5px -5px 5px rgba(255, 255, 255, 1),
+              inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-out;
+    transform:scale(0.99)
 }

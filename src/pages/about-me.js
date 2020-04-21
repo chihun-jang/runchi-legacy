@@ -10,7 +10,7 @@ const SecondPage = () => (
         <ProfileBox></ProfileBox>
         <SEO title="About-Me" />
         <h1>About Me</h1>
-        <p>제 소개를 여기에 적을겁니다</p>
+        <p>안녕하세요 Runchi Blog를 찾아주셔서 감사합니다.</p>
     </Layout>
 )
 
