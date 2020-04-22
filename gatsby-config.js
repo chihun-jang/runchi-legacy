@@ -40,13 +40,14 @@ module.exports = {
             options: {
                 plugins: [
                     {
+                        // 마크다운 내부에 쓰는 이미지는 lazy load를 사용할수없다.
                         resolve: `gatsby-remark-images`,
                         options: {
                             // It's important to specify the maxWidth (in pixels) of
                             // the content container as this plugin uses this as the
                             // base for generating different widths of each image.
                             maxWidth: 1200,
-                            maxHeight: 1200,
+                            // 사용방법은 ![alt text](image-name.jpg)
                         },
                     },
                     // 아래는 수식을 작성할때 쓸수있는 Latex와 같은 문법들을 붙일수있는 plugin
@@ -66,12 +67,12 @@ module.exports = {
                     //     },
                     // },
 
-                    // {
-                    //     resolve: `gatsby-remark-responsive-iframe`,
-                    //     options: {
-                    //         wrapperStyle: `margin-bottom: 1.0725rem`,
-                    //     },
-                    // },
+                    {
+                        resolve: `gatsby-remark-responsive-iframe`,
+                        options: {
+                            wrapperStyle: `margin-bottom: 1.0725rem`,
+                        },
+                    },
 
                     {
                         resolve: `gatsby-remark-prismjs`,
@@ -80,11 +81,16 @@ module.exports = {
                             showLineNumbers: false,
                         },
                     },
-                    // `gatsby-remark-copy-linked-files`,
-                    // `gatsby-remark-smartypants`,
-                    
-                    // `gatsby-remark-autolink-headers`,
-                    // `gatsby-remark-emoji`,
+
+                    // 아래는 " " 와 같은 애들이 인쇄(보여질때) 불확실하게 보여지는 부분을 확실하게 규정
+                    {
+                        resolve: 'gatsby-remark-smartypants',
+                        options: {
+                            dashes: 'oldschool',
+                        },
+                    },
+                    // 이거는 마크다운 제목에 id를 자동추가하고 svg아이콘이 포함된 a요소를 클릭하면 자동 링킹
+                    'gatsby-remark-autolink-headers',
                 ],
             },
         },
@@ -95,7 +101,6 @@ module.exports = {
             options: {
                 trackingId: 164055351,
                 head: true,
-
             },
         },
         {
@@ -107,10 +112,10 @@ module.exports = {
                 background_color: `#663399`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
+                // 아래는 파비콘 아이콘(굳이 사이즈를 안맞춰도 된다)
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
             },
         },
-
 
         // 아래는 타이포 그래피 관련 플러그인 그런데 마땅한 타이포그래피가 없어서 일단은 내비두겠다.
         //
@@ -127,7 +132,7 @@ module.exports = {
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
 
-        //오프라인동작
+        //오프라인동작(구글 라이브러리 workbox를 사용하고 서비스웤러르 통해서 파일캐싱후에 동작)
         `gatsby-plugin-offline`,
 
         // 사이트맵
@@ -135,6 +140,22 @@ module.exports = {
 
         // `gatsby-plugin-sass`,
 
+        // 아래는 스타일링된 컴포넌트 자체를 만들수있는데 기존의 ClassName으로 style하는거랑 다르게
+        // 아예 스타일링이 내장된 컴포넌트를 만드는게 차이점이다.
+        //'gatsby-plugin-styled-components'
 
+        // 아래는 유튭이나 stackoverflow 와 같은 곳에서 페이지 로딩시 상단 progressbar 를 표현하는건데
+        // 일반적으로 gatsby 에서는 작동할일이없다.. 대신 componentDidMount같은 외부데이터를 사용할때는 필요할수도
+        // https://github.com/rstacruz/nprogress/
+        // {
+        //     resolve: `gatsby-plugin-nprogress`,
+        //     options: {
+        //         color: `darkorange`,
+        //         showSpinner: true,
+        //     },
+        // },
+
+        // 아래요소는 우리가 지정한 특정위치에 page를 만들어 줄수 있는 플러그인.
+        // gatsby-plugin-page-creator
     ],
 }
