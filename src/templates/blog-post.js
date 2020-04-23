@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import post_detail from '../styles/post_detail.module.css'
-import SVG from '../components/SVG'
+import SVG from '../components/svg'
 
 export default ({ data }) => {
     const post = data.markdownRemark

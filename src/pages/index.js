@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import main from '../styles/main.module.css'
 
-import SVG from '../components/SVG'
+import SVG from '../components/svg'
 
 const IndexPage = ({ data }) => {
     // const emptyQuery = ""
