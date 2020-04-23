@@ -1,7 +1,7 @@
 ---
 title: "노트북 배터리 255%, 배터리 없음"
 date : "2020-02-29"
-category: diary
+category: Diary
 
 ---
 

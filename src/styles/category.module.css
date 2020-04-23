@@ -5,7 +5,11 @@
     /* display: inline-block; */
 
 }
-
+.category_section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .category_item{
     width:90px;
     height:90px;

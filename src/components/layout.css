@@ -685,6 +685,8 @@ code[class*="language-"]{
   margin:10px 0;
 }
 
-
+*{
+    white-space: pre-line;
+}
 
 

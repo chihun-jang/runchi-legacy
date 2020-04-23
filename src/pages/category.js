@@ -24,14 +24,19 @@ const CategoryPage = () => {
         <Layout>
             <SEO title="Category" />
             <h1 className={category.category_title}>Category</h1>
-            {categories.allMarkdownRemark.group.map(item => (
-                <Link to={item.fieldValue}>
-                    <div className={category.category_item}>
-                        <div>{item.fieldValue}</div>{' '}
-                        <span>{item.totalCount}</span>
-                    </div>
-                </Link>
-            ))}
+            <section className={category.category_section}>
+
+                {categories.allMarkdownRemark.group.map(item => (
+                    <Link to={item.fieldValue}>
+                        <div className={category.category_item}>
+                            <div>{item.fieldValue}</div>{' '}
+                            <span>{item.totalCount}</span>
+                        </div>
+                    </Link>
+                ))}
+
+            </section>
+
         </Layout>
     )
   
