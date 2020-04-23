@@ -63,28 +63,32 @@ const IndexPage = ({ data }) => {
           /> */}
 
       
-
+        <div className={main.main_post_container} >
       {allPosts.map(({ node }) => (
-              <Fragment key={node.id}>
-               
+             
+          <div className={main.main_post_section} key={node.id}>
+              <Link className={main.main_post_link} to={node.fields.slug}>
 
-                <div className={main.main_post_section} >
-                  <Link className={main.main_post_link} to={node.fields.slug}>
+                <div className={main.main_post_overflow}>
 
-                    <h2 className={main.main_post_title}>
-                      {node.frontmatter.title}<span>{node.frontmatter.category}</span>
-                    </h2>
+                      <h2 className={main.main_post_title}>
+                        {node.frontmatter.title}<span className={main.main_post_category}>{node.frontmatter.category}</span>
+                        <span className={main.main_post_date}>
+                          <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
+                        </span>
+                      </h2>
 
-                    <h6 className={main.main_post_date}>
-                      <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
-                    </h6>
+                      
 
-                  </Link>
-                  <div className={main.main_post_content} dangerouslySetInnerHTML={{ __html: node.html }} />
-                </div>
-              </Fragment>
+                    
+                    
+                      <div className={main.main_post_content} dangerouslySetInnerHTML={{ __html: node.html }} />
+                </div>    
+              </Link>  
+          </div>
+              
           ))}
-
+        </div>
       </Layout>
   )
 }
@@ -93,7 +97,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
 query MyQuery {
-  allMarkdownRemark {
+  allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
     totalCount
     edges {
       node {
