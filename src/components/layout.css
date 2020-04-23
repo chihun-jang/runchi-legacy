@@ -653,19 +653,21 @@ body {
 
 }
 
-*{
-  font-family: 'Roboto','Noto Sans KR',serif !important;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-  text-shadow:0 0 1px transparent;
-  letter-spacing: 0.5px;
-}
+
 
 
 /* 커스텀 layout 설정 */
 
 /* 커스텀 layout */
+*{
+  font-family: 'Roboto','Noto Sans KR',serif !important;
+  line-height: 1.5 !important;
+  text-rendering: optimizeLegibility;
+  text-shadow:0 0 1px transparent;
+  letter-spacing: 0.5px;
+  white-space: pre-line !important;
 
+}
 
 :not(pre) > code[class*="language-"], pre[class*="language-"]{
   background-color: #000000b4;
@@ -685,9 +687,8 @@ code[class*="language-"]{
   margin:10px 0;
 }
 
-*{
-    white-space: pre-line;
-}
+
+
 
 .Css{
   color:#75c0fde0

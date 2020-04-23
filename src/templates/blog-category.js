@@ -14,14 +14,14 @@ export default ({ data }) => {
                     <Link to={node.fields.slug}>
                         <h2 className={post_detail.post_title}>
                             {node.frontmatter.title}
-                            <div className={post_detail.post_category}>
+                            
+                            <div className={post_detail.post_date}>
                                 <span className={node.frontmatter.category}>
                                     {node.frontmatter.category}
                                 </span>
-                            </div>
-                            <span className={post_detail.post_date}>
+                                
                                 <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
-                            </span>
+                            </div>
 
                         </h2>
                     </Link>

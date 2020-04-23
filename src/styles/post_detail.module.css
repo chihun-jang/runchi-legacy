@@ -16,12 +16,7 @@
     box-shadow: 4px 4px 6px 0 rgba(0,0,0,.1), -4px -4px 6px rgba(255,255,255,1);
 }
 
-.post_category{
-font-size:15px;
-    color:#aaa;
-    display: inline-block;
-    margin-left:20px;
-}
+
 
 .post_date{
  display: flex;
@@ -30,6 +25,24 @@ font-size:15px;
     align-items: center;
     margin-top:10px;
 }
+
+.post_date >span{
+    margin-right:20px;
+}
+.post_date > SVG{
+    margin-right:3px;
+}
 .post_content{
     padding:20px;
+}
+
+@media(max-width:768px){
+    .post_container{
+        margin:0;
+        padding:5px;
+    }
+    .post_content{
+    padding:15px;
+    font-size:14px;
+}
 }
