@@ -28,9 +28,9 @@ const CategoryPage = () => {
 
                 {categories.allMarkdownRemark.group.map(item => (
                     <Link to={item.fieldValue}>
-                        <div className={category.category_item}>
-                            <div>{item.fieldValue}</div>{' '}
-                            <span>{item.totalCount}</span>
+                        <div className={category.category_item }>
+                            <div className={item.fieldValue}>{item.fieldValue}</div>{' '}
+                            <span className={item.fieldValue}>{item.totalCount}</span>
                         </div>
                     </Link>
                 ))}

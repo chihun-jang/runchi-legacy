@@ -72,7 +72,10 @@ const IndexPage = ({ data }) => {
                 <div className={main.main_post_overflow}>
 
                       <h2 className={main.main_post_title}>
-                        {node.frontmatter.title}<span className={main.main_post_category}>{node.frontmatter.category}</span>
+                        {node.frontmatter.title}
+                        <div className={main.main_post_category}>
+                          <span className={node.frontmatter.category}>{node.frontmatter.category}</span>
+                        </div>
                         <span className={main.main_post_date}>
                           <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
                         </span>

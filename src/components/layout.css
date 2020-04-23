@@ -689,4 +689,25 @@ code[class*="language-"]{
     white-space: pre-line;
 }
 
+.Css{
+  color:#75c0fde0
+}
+.Git{
+  color:rgba(255, 133, 20, 0.61)
+}
 
+.Javascript{
+  color:rgba(230, 196, 46, 0.753)
+}
+.Markdown{
+  color:rgba(51, 51, 51, 0.637)
+}
+.Os{
+  color:rgba(131, 199, 75, 0.849)
+}
+.Deploy{
+  color:rgba(255, 108, 108, 0.849)
+}
+.Diary{
+  color:rgba(202, 123, 255, 0.801)
+}

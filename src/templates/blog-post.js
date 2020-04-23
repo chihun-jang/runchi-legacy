@@ -12,9 +12,11 @@ export default ({ data }) => {
         <div className={post_detail.post_container}>
           <h2 className={post_detail.post_title}>
             {post.frontmatter.title}
-            <span className={post_detail.post_category}>
-              {post.frontmatter.category}
-            </span>
+            <div className={post_detail.post_category}>
+              <span className={ post.frontmatter.category}>
+                {post.frontmatter.category}
+              </span>
+            </div>
             <span className={post_detail.post_date}>
               <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {post.frontmatter.date}
             </span>
