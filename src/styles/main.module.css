@@ -108,7 +108,7 @@
     /* border:3px solid green; */
     /* grid-template-columns: repeat(9,1fr);
     grid-template-rows: repeat(7,minmax(100px,auto)); */
-    grid-auto-columns: minmax(50px, auto);
+    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 
     grid-auto-rows: 100px;
 
@@ -220,3 +220,9 @@
     margin: 0 20px;
 }
 
+@media(max-width:768px){
+    .main_post_section:nth-child(n){
+        grid-column: auto/ span 4;
+        grid-row: auto/ span 3;
+    }
+}
