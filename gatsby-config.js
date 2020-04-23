@@ -4,7 +4,6 @@ module.exports = {
         description: `특별할 것 없는 일상이 있는 곳입니다.`,
         author: `runchi`,
         siteUrl: 'https://runchi.com',
-        // icon:'', 내 파비콘의 위치를 작성해주자
         // keyword : ['키워드입력'],
         // comment:{
         //     utterances:'chihun-jang/runchi',
@@ -106,14 +105,14 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
-                short_name: `starter`,
+                name: `runchi-blog`,
+                short_name: `runchi`,
                 start_url: `/`,
                 background_color: `#663399`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
                 // 아래는 파비콘 아이콘(굳이 사이즈를 안맞춰도 된다)
-                icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+                icon: `src/images/혁이.jpg`, // This path is relative to the root of the site.
             },
         },
 
