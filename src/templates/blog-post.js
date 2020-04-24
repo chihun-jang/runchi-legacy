@@ -4,11 +4,14 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import post_detail from '../styles/post_detail.module.css'
 import SVG from '../components/svg'
+import SEO from "../components/seo"
 
 export default ({ data }) => {
     const post = data.markdownRemark
     return (
       <Layout >
+        <SEO title={post.frontmatter.title} />
+
         <div className={post_detail.post_container}>
           <h2 className={post_detail.post_title}>
             {post.frontmatter.title}

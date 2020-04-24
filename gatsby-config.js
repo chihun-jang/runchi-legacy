@@ -1,10 +1,10 @@
 module.exports = {
     siteMetadata: {
-        title: `벽에 그린 나의 키`,
-        description: `특별할 것 없는 일상이 있는 곳입니다.`,
+        title: `Runchi Blog`,
+        description: `개발과 생각을 좋아하는 Runchi의 집`,
         author: `runchi`,
-        siteUrl: 'https://runchi.com',
-        image: './src/images/mainprofile.jpg',
+        siteUrl: 'https://runchi.netlify.app',
+        image: '/images/mainprofile.jpg',
         // keyword : ['키워드입력'],
         // comment:{
         //     utterances:'chihun-jang/runchi',

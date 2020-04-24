@@ -10,23 +10,35 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title,image }) {
+
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            title
-            description
-            author
+            defaultTitle : title
+            defaultDescription : description
+            siteUrl : siteUrl
+            defaultImage:image
           }
         }
       }
     `
   )
+  const {
+    defaultTitle,
+    defaultDescription,
+    siteUrl,
+    defaultImage
+  } = site.siteMetadata
 
-  const metaDescription = description || site.siteMetadata.description
-  const metaImage = null || site.siteMetadata.image
+  const seo = {
+    title: title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image || defaultImage}`
+
+  }
 
   return (
     <Helmet
@@ -34,11 +46,11 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${defaultTitle}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
@@ -46,11 +58,11 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: metaImage,
+          content: image,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
@@ -70,22 +82,26 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />
   )
 }
 
+
+// 아무것도 props 가 안넘어올때 기본값으로 설정해주기 위함.
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ko`,
   meta: [],
-  description: ``,
+  description: `개발과 생각을 좋아하는 Runchi의 집`,
+  image:'images/mainprofile.jpg',
 }
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  image: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }

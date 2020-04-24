@@ -48,7 +48,7 @@ const IndexPage = ({ data }) => {
 
   return (
       <Layout>
-          <SEO title="Home" />
+          <SEO title="Runchi-Blog" />
 
         <h2 className={main.main_title}>
         모든 글
