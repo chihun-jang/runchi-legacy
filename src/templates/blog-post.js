@@ -50,7 +50,10 @@ export const query = graphql`
            query ($slug: String){
                markdownRemark(
                    fields: { slug: { eq: $slug } }
-               ) {
+               ) 
+               {fields{
+                 slug
+               }
                    html
                    frontmatter {
                        title

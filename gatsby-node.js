@@ -59,6 +59,13 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
             path: node.fields.slug,
             component: blogTemplate,
+            context: {
+                // Data passed to context is available
+                // in page queries as GraphQL variables.
+                //아래 슬러그를 안넘겨주면 blog-post 에서 detail page 를 만들어주는 부분에서 slug를 제대로 받아오지 못해서
+                // 쿼리문을 제대로 못날려준다 ㅠㅠ
+                slug: node.fields.slug,
+            },
         })
     })
     // Extract tag data from query
