@@ -6,8 +6,7 @@ import SEO from "../components/seo"
 import category from '../styles/category.module.css'
 
 import PropTypes from 'prop-types'
-
-import kebabCase from 'lodash/kebabCase'
+const _ = require("lodash")
 
 
 // 여기는 Category List를 보여주는 Page 입니다.
@@ -51,10 +50,10 @@ const CategoryList = (
             <section className={category.category_section}>
 
                 {categories.allMarkdownRemark.group.map(item => (
-                    <Link to={`/category/${kebabCase(item.fieldValue)}/`} key={item.fieldValue}>
+                    <Link to={`/category/${_.kebabCase(item.fieldValue)}/`} key={item.fieldValue}>
                         <div className={category.category_item }>
-                            <div className={item.fieldValue}>{item.fieldValue}</div>{' '}
-                            <span className={item.fieldValue}>{item.totalCount}</span>
+                            <div className={_.capitalize(item.fieldValue)}>{_.capitalize(item.fieldValue)}</div>{' '}
+                            <span className={_.capitalize(item.fieldValue)}>{item.totalCount}</span>
                         </div>
                     </Link>
                 ))}

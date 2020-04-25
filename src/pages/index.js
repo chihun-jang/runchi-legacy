@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 import main from '../styles/main.module.css'
 
 import SVG from '../components/svg'
+const _ = require('lodash')
 
 const IndexPage = ({ data }) => {
     // const emptyQuery = ""
@@ -77,7 +78,7 @@ const IndexPage = ({ data }) => {
                         {node.frontmatter.title}
                        
                         <div className={main.main_post_date}>
-                          <span className={node.frontmatter.category}>{node.frontmatter.category}</span>
+                          <span className={_.capitalize(node.frontmatter.category)}>{_.capitalize(node.frontmatter.category)}</span>
                           <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
                         </div>
                       </h2>

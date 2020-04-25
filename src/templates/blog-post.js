@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import post_detail from '../styles/post_detail.module.css'
 import SVG from '../components/svg'
 import SEO from "../components/seo"
+const _ = require("lodash")
 
 export default ({ data }) => {
     const post = data.markdownRemark
@@ -27,8 +28,8 @@ export default ({ data }) => {
             {post.frontmatter.title}
            
             <div className={post_detail.post_date}>
-              <span className={post.frontmatter.category}>
-                {post.frontmatter.category}
+              <span className={_.capitalize(post.frontmatter.category)}>
+                {_.capitalize(post.frontmatter.category)}
               </span>
               <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {post.frontmatter.date}
             </div>
@@ -46,18 +47,19 @@ export default ({ data }) => {
     )
 }
 export const query = graphql`
-  query($slug: String) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        date
-        category
-        
-      }
-    }
-  }
-`
+           query ($slug: String){
+               markdownRemark(
+                   fields: { slug: { eq: $slug } }
+               ) {
+                   html
+                   frontmatter {
+                       title
+                       date
+                       category
+                   }
+               }
+           }
+       `
 
 // 필요하다면 category와 같은 레벨로 og image를 query로 날려서 불러올수있따.
 

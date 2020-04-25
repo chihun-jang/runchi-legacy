@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import post_detail from '../styles/post_detail.module.css'
 import SVG from '../components/svg'
 
+const _ = require("lodash")
 
 // 이 페이지는 Category 내부 post page
 const Category =  ({ pageContext, data }) => {
@@ -45,8 +46,8 @@ const Category =  ({ pageContext, data }) => {
                             {node.frontmatter.title}
                             
                             <div className={post_detail.post_date}>
-                                <span className={node.frontmatter.category}>
-                                    {node.frontmatter.category}
+                                <span className={_.capitalize(node.frontmatter.category)}>
+                                    {_.capitalize(node.frontmatter.category)}
                                 </span>
                                 
                                 <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
