@@ -127,6 +127,7 @@ module.exports = {
         },
         // 이건 다이나믹 head
         `gatsby-plugin-react-helmet`,
+        `gatsby-plugin-lodash`,
 
         // 파일 인식 플러그인
         `gatsby-transformer-sharp`,
