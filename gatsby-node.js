@@ -20,14 +20,16 @@ exports.createPages = async ({ graphql, actions }) => {
     const blogTemplate = path.resolve('./src/templates/blog-post.js')
     const blogCategory = path.resolve('./src/templates/blog-category.js')
 
-    const tagTemplate = path.resolve("src/templates/tags.js")
 
     // **Note:** The graphql function call returns a Promise
     // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
     const result = await graphql(
         `
             query {
-                allMarkdownRemark {
+                postsRemark: allMarkdownRemark(
+                    sort: { order: DESC, fields: [frontmatter___date] }
+                    limit: 2000
+                ) {
                     edges {
                         node {
                             frontmatter {
@@ -39,80 +41,36 @@ exports.createPages = async ({ graphql, actions }) => {
                         }
                     }
                 }
+                categorysgroup: allMarkdownRemark(limit: 2000) {
+                    group(field: frontmatter___category) {
+                        fieldValue
+                    }
+                }
             }
         `
     )
 
-    const result2 = await graphql(`
-    {
-      postsRemark: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 2000
-      ) {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              tag
-            }
-          }
-        }
-      }
-      tagsGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tag) {
-          fieldValue
-        }
-      }
-    }
-  `)
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: node.fields.slug,
-            component: blogTemplate,
-            context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
-                slug: node.fields.slug,
-            },
-        })
-    })
-
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.category,
-            component: blogCategory,
-            context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
-                category: node.frontmatter.category,
-                slug: node.fields.slug,
-            },
-        })
-      
-
-        
-    })
 
 
-    const posts2 = result2.data.postsRemark.edges
+
+    const posts = result.data.postsRemark.edges
     // Create post detail pages
-    posts2.forEach(({ node }) => {
+    posts.forEach(({ node }) => {
         createPage({
             path: node.fields.slug,
             component: blogTemplate,
         })
     })
     // Extract tag data from query
-    const tags = result2.data.tagsGroup.group
+    // 이거 누르면 category 상세 페이지로 이동
+    const categorys = result.data.categorysgroup.group
     // Make tag pages
-    tags.forEach(tag => {
+    categorys.forEach(category => {
         createPage({
-            path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-            component: tagTemplate,
+            path: `/category/${_.kebabCase(category.fieldValue)}/`,
+            component: blogCategory,
             context: {
-                tag: tag.fieldValue,
+                category: category.fieldValue,
             },
         })
     })
@@ -128,7 +86,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     createNodeField({
         node,
         name: `slug`,
-        value: node.frontmatter.category  + slug,
+        value: slug,
     })
   }
 }

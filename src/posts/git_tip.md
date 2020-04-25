@@ -1,7 +1,7 @@
 ---
 title: "Git-hub advenced Tip"
 date: "2020-03-29"
-category: Git
+category: ['git']
 ---
 
 revert, 이름바꾸기

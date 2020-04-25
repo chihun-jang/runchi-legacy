@@ -1,7 +1,7 @@
 ---
 title: 'OS-System_Structure'
 date: '2020-03-03'
-category: Os
+category: ['os']
 
 ---
 

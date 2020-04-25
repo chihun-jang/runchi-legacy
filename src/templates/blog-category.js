@@ -1,16 +1,45 @@
 import React from 'react'
-import { Link,graphql } from 'gatsby'
+import { useStaticQuery,Link,graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import post_detail from '../styles/post_detail.module.css'
 import SVG from '../components/svg'
 
-export default ({ data }) => {
+
+// 이 페이지는 Category 내부 post page
+const Category =  ({ pageContext, data }) => {
+
+
+    // const categoryposts = useStaticQuery(graphql`
+    //     query($category: String) {
+    //         allMarkdownRemark(
+    //             sort: { fields: [frontmatter___date], order: DESC }
+    //             filter: { frontmatter: { category: { in: [$category] } } }
+    //         ) {
+    //             totalCount
+    //             edges {
+    //                 node {
+    //                     fields {
+    //                         slug
+    //                     }
+    //                     frontmatter {
+    //                         title
+    //                         category
+    //                         date
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `)
+    const {category} = pageContext
+    const { edges, totalCount } = data.allMarkdownRemark
+
     const posts = data.allMarkdownRemark.edges
     return (
         <Layout>
             {posts.map(({ node }) => (
-                <div className={post_detail.post_container}>
+                <div className={post_detail.post_container} key={node.fields}>
                     <Link to={node.fields.slug}>
                         <h2 className={post_detail.post_title}>
                             {node.frontmatter.title}
@@ -30,23 +59,53 @@ export default ({ data }) => {
         </Layout>
     )
 }
-export const query = graphql`
-           query($category: String!) {
-               allMarkdownRemark(
-                   filter: { frontmatter: { category: { eq: $category } } }
-               ) {
-                   edges {
-                       node {
-                           frontmatter {
-                               category
-                               date
-                               title
-                           }
-                           fields {
-                               slug
-                           }
-                       }
-                   }
-               }
-           }
-       `
+
+export default Category
+
+
+// Tags.propTypes = {
+//     pageContext: PropTypes.shape({
+//         tag: PropTypes.string.isRequired,
+//     }),
+//     data: PropTypes.shape({
+//         allMarkdownRemark: PropTypes.shape({
+//             totalCount: PropTypes.number.isRequired,
+//             edges: PropTypes.arrayOf(
+//                 PropTypes.shape({
+//                     node: PropTypes.shape({
+//                         frontmatter: PropTypes.shape({
+//                             title: PropTypes.string.isRequired,
+//                         }),
+//                         fields: PropTypes.shape({
+//                             slug: PropTypes.string.isRequired,
+//                         }),
+//                     }),
+//                 }).isRequired
+//             ),
+//         }),
+//     }),
+// }
+
+
+export const categoryposts = graphql`
+        query($category: String) {
+            allMarkdownRemark(
+                sort: { fields: [frontmatter___date], order: DESC }
+                filter: { frontmatter: { category: { in: [$category] } } }
+            ) {
+                totalCount
+                edges {
+                    node {
+                        fields {
+                            slug
+                        }
+                        frontmatter {
+                            title
+                            category
+                            date
+                        }
+                    }
+                }
+            }
+        }
+    `

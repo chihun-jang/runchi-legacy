@@ -1,7 +1,7 @@
 ---
 title: "Float를 이용한 positioning Tip"
 date: "2020-03-10"
-category: Css
+category: ['css']
 ---
 
 

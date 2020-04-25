@@ -1,7 +1,7 @@
 ---
 title: "CSS에서 operator사용하기"
 date: "2020-03-02"
-category: Css
+category: ['css']
 ---
 
 

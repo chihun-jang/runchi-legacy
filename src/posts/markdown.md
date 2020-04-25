@@ -1,7 +1,7 @@
 ﻿---
 title: "MarkDown 문법"
 date: "2020-02-27"
-category: Markdown
+category: ['markdown']
 ---
 
 
