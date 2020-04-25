@@ -4,7 +4,7 @@ module.exports = {
         description: `개발과 생각을 좋아하는 Runchi의 집`,
         author: `runchi`,
         siteUrl: 'https://runchi.netlify.app',
-        image:'https://avatars0.githubusercontent.com/u/38258901?s=400&u=e676bf0057c0c79ea27f4e26cd8af13449212d2f&v=4',
+        image: '/static/5a51cc9376d31ea6094f0eb14d587a76/2244e/runchi_icon.jpg',
         // keyword : ['키워드입력'],
         // comment:{
         //     utterances:'chihun-jang/runchi',
