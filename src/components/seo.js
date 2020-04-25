@@ -20,7 +20,8 @@ function SEO({ description, lang, meta, title,image }) {
             defaultTitle : title
             defaultDescription : description
             siteUrl : siteUrl
-            defaultImage:image
+            image:image
+            
           }
         }
       }

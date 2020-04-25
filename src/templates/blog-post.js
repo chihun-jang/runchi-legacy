@@ -8,9 +8,19 @@ import SEO from "../components/seo"
 
 export default ({ data }) => {
     const post = data.markdownRemark
+
+    // const { ogimage } = post.frontmatter
+    // const ogImagePath = ogimage && ogimage.childImageSharp.fixed.src
+
     return (
       <Layout >
-        <SEO title={post.frontmatter.title} />
+        <SEO 
+          title={post.frontmatter.title}
+          description={post.frontmatter.desc} 
+          // image={ogImagePath}
+
+          />
+
 
         <div className={post_detail.post_container}>
           <h2 className={post_detail.post_title}>
@@ -43,7 +53,18 @@ export const query = graphql`
         title
         date
         category
+        
       }
     }
   }
 `
+
+// 필요하다면 category와 같은 레벨로 og image를 query로 날려서 불러올수있따.
+
+// ogimage {
+//   childImageSharp {
+//     fixed {
+//       src
+//     }
+//   }
+// }

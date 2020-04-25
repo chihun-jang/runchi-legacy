@@ -22,7 +22,9 @@ const CategoryPage = () => {
 
     return (
         <Layout>
-            <SEO title="Category" />
+            <SEO 
+                title="Category"
+                description="주제별 카테고리 확인" />
             <h1 className={category.category_title}>Category</h1>
             <section className={category.category_section}>
 

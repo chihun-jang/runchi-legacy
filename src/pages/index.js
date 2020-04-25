@@ -48,7 +48,9 @@ const IndexPage = ({ data }) => {
 
   return (
       <Layout>
-          <SEO title="Runchi-Blog" />
+          <SEO 
+            title="Runchi-Home" 
+            description="Runchi-Blog의 메인페이지입니다."/>
 
         <h2 className={main.main_title}>
         모든 글

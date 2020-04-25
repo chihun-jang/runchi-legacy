@@ -1,10 +1,10 @@
 module.exports = {
     siteMetadata: {
-        title: `Runchi Blog`,
+        title: `Runchi-Blog`,
         description: `개발과 생각을 좋아하는 Runchi의 집`,
         author: `runchi`,
         siteUrl: 'https://runchi.netlify.app',
-        image:'../images/mainprofile.jpg',
+        image:'https://avatars0.githubusercontent.com/u/38258901?s=400&u=e676bf0057c0c79ea27f4e26cd8af13449212d2f&v=4',
         // keyword : ['키워드입력'],
         // comment:{
         //     utterances:'chihun-jang/runchi',
