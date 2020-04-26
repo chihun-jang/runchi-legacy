@@ -42,51 +42,52 @@ function SEO({ description, lang, meta, title,image }) {
   }
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${defaultTitle}`}
-      meta={[
-        {
-          name: `description`,
-          content: description,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:image`,
-          content: image,
-        },
-        {
-          property: `og:description`,
-          content: description,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: description,
-        },
-      ].concat(meta)}
-    />
+      <Helmet
+          htmlAttributes={{
+              lang,
+          }}
+          title={title}
+          titleTemplate={`%s | ${defaultTitle}`}
+          meta={[
+              {
+                  name: `description`,
+                  content: description,
+              },
+              {
+                  property: `og:title`,
+                  content: title,
+              },
+              {
+                  property: `og:image`,
+                  content:
+                      'https://runchi.dev/static/5a51cc9376d31ea6094f0eb14d587a76/2244e/runchi_icon.jpg',
+              },
+              {
+                  property: `og:description`,
+                  content: description,
+              },
+              {
+                  property: `og:type`,
+                  content: `website`,
+              },
+              {
+                  name: `twitter:card`,
+                  content: `summary`,
+              },
+              {
+                  name: `twitter:creator`,
+                  content: site.siteMetadata.author,
+              },
+              {
+                  name: `twitter:title`,
+                  content: title,
+              },
+              {
+                  name: `twitter:description`,
+                  content: description,
+              },
+          ].concat(meta)}
+      />
   )
 }
 
