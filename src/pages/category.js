@@ -85,14 +85,6 @@ CategoryList.propTypes = {
 }
 
 
-// 여기는 댓글플러그인을 구현하기 위한 Script코드
-{/* <script src="https://utteranc.es/client.js"
-    repo="chihun-jang/runchi"
-    issue-term="title"
-    label="Comment"
-    theme="photon-dark"
-    crossorigin="anonymous"
-    async>
-</script> */}
+
 
 export default CategoryList

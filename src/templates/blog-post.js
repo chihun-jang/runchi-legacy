@@ -5,6 +5,8 @@ import Layout from "../components/layout"
 import post_detail from '../styles/post_detail.module.css'
 import SVG from '../components/svg'
 import SEO from "../components/seo"
+
+import Utterences from '../components/Utterances'
 const _ = require("lodash")
 
 export default ({ data }) => {
@@ -42,7 +44,7 @@ export default ({ data }) => {
             <div dangerouslySetInnerHTML={{ __html: post.html }} />
           </div>
         </div>
-           
+        <Utterences repo={'chihun-jang/runchi'} /> 
         </Layout>
     )
 }
