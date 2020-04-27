@@ -96,7 +96,7 @@ SEO.defaultProps = {
     lang: `ko`,
     meta: [],
     description: `개발과 생각을 좋아하는 Runchi의 집`,
-    image: '/static/5a51cc9376d31ea6094f0eb14d587a76/2244e/runchi_icon.jpg',
+  image: '/static/runchi_icon-5a51cc9376d31ea6094f0eb14d587a76.jpg',
 }
 
 SEO.propTypes = {
