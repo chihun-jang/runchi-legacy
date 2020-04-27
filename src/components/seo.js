@@ -34,12 +34,12 @@ function SEO({ description, lang, meta, title,image }) {
     defaultImage
   } = site.siteMetadata
 
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`
 
-  }
+    const seotitle= title || defaultTitle
+    const seodescription= description || defaultDescription
+    const seoimage= `${siteUrl}${image || defaultImage}`
+
+ 
 
   return (
       <Helmet
@@ -51,20 +51,19 @@ function SEO({ description, lang, meta, title,image }) {
           meta={[
               {
                   name: `description`,
-                  content: description,
+                  content: seodescription,
               },
               {
                   property: `og:title`,
-                  content: title,
+                  content: seotitle,
               },
               {
                   property: `og:image`,
-                  content:
-                      'https://runchi.dev/static/5a51cc9376d31ea6094f0eb14d587a76/2244e/runchi_icon.jpg',
+                  content: seoimage,
               },
               {
                   property: `og:description`,
-                  content: description,
+                  content: seodescription,
               },
               {
                   property: `og:type`,
@@ -84,7 +83,7 @@ function SEO({ description, lang, meta, title,image }) {
               },
               {
                   name: `twitter:description`,
-                  content: description,
+                  content: seodescription,
               },
           ].concat(meta)}
       />
@@ -94,10 +93,10 @@ function SEO({ description, lang, meta, title,image }) {
 
 // 아무것도 props 가 안넘어올때 기본값으로 설정해주기 위함.
 SEO.defaultProps = {
-  lang: `ko`,
-  meta: [],
-  description: `개발과 생각을 좋아하는 Runchi의 집`,
-  image:'images/mainprofile.jpg',
+    lang: `ko`,
+    meta: [],
+    description: `개발과 생각을 좋아하는 Runchi의 집`,
+    image: '/static/5a51cc9376d31ea6094f0eb14d587a76/2244e/runchi_icon.jpg',
 }
 
 SEO.propTypes = {

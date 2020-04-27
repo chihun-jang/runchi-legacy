@@ -5,6 +5,7 @@ module.exports = {
         author: `runchi`,
         siteUrl: 'https://runchi.dev',
         image: '/static/5a51cc9376d31ea6094f0eb14d587a76/2244e/runchi_icon.jpg',
+        meta: [],
         // keyword : ['키워드입력'],
         // comment:{
         //     utterances:'chihun-jang/runchi',
