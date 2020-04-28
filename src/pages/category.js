@@ -29,7 +29,7 @@ const CategoryList = (
                     title
                 }
             }
-            allMarkdownRemark(limit: 2000) {
+            allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}},limit: 2000) {
                 group(field: frontmatter___category) {
                     fieldValue
                     totalCount

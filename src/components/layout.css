@@ -659,6 +659,18 @@ body {
 /* 커스텀 layout 설정 */
 
 /* 커스텀 layout */
+
+a{
+    color:black;
+    text-decoration: none;
+}
+a:visited{
+    color:black;
+    
+}
+
+
+
 *{
   font-family: 'Roboto','Noto Sans KR',serif !important;
   line-height: 1.5 !important;
@@ -666,7 +678,6 @@ body {
   text-shadow:0 0 1px transparent;
   letter-spacing: 0.5px;
   white-space: pre-line !important;
-
 }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"]{
@@ -674,6 +685,10 @@ body {
   white-space: pre-line;
   /* margin:10px 0; */
   /* padding:5px 10px; */
+  max-width:100% ;
+  word-wrap: break-word !important;
+
+
 }
 pre[class*="language-"]{
   padding:0;
@@ -700,7 +715,7 @@ code[class*="language-"]{
 .Javascript{
   color:rgba(230, 196, 46, 0.753)
 }
-.Markdown{
+.Etc{
   color:rgba(51, 51, 51, 0.637)
 }
 .Os{

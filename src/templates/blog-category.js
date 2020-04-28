@@ -91,8 +91,8 @@ export default Category
 export const categoryposts = graphql`
         query($category: String) {
             allMarkdownRemark(
-                sort: { fields: [frontmatter___date], order: DESC }
-                filter: { frontmatter: { category: { in: [$category] } } }
+                sort: { fields: [frontmatter___date], order: DESC },
+                filter: {frontmatter: {draft: {eq: false}, category: {in: [$category]}}}
             ) {
                 totalCount
                 edges {
