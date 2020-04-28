@@ -8,8 +8,8 @@ const ProfileBox = () => (
     <div className={main.profile_box}>
         <ProfileImage />
         <div className={main.profile_info_box}>
-            <p className={main.profile_info}>장치훈(chihun jang)</p>
-            <p className={main.profile_info}>벽에 그리는 키처럼 제 삶을 기록하는 곳입니다.</p>
+            <p className={main.profile_info}>장치훈(chihun jang) E-mail : jang.chihun@gmail.com</p>
+            <p className={main.profile_info}>벽에 그리는 키처럼 조금씩 그리는 곳</p>
         </div>
         
     </div>
