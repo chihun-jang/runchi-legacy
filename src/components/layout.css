@@ -685,13 +685,11 @@ a:visited{
   white-space: pre-line;
   padding:1px 5px;
   max-width:100% ;
-  word-wrap: break-word !important;
-
+  /* word-wrap: break-word !important; */
 
 }
-pre[class*="language-"]{
-  padding:0;
-}
+
+
 code[class*="language-"]{
   color:white;
   /* padding:5px 10px !important; */
@@ -699,6 +697,27 @@ code[class*="language-"]{
   padding:5px 10px;
   display: inline-block;
   margin:10px 0;
+}
+.gatsby-highlight, code[class*="language-"],
+code[class*="language-"] span{
+  white-space: pre !important;
+}
+
+/* scrollbar custom */
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #93a1a1bf; 
+    border-radius: 5px;
+
 }
 
 
