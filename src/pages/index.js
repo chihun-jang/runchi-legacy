@@ -78,7 +78,10 @@ const IndexPage = ({ data }) => {
                         {node.frontmatter.title}
                        
                         <div className={main.main_post_date}>
-                          <span className={_.capitalize(node.frontmatter.category)}>{_.capitalize(node.frontmatter.category)}</span>
+                          {node.frontmatter.category.map((category_item)=>(
+                            <span className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
+                          ))}
+                          
                           <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
                         </div>
                       </h2>

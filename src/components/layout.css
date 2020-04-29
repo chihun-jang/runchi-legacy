@@ -683,8 +683,7 @@ a:visited{
 :not(pre) > code[class*="language-"], pre[class*="language-"]{
   background-color: #000000b4;
   white-space: pre-line;
-  /* margin:10px 0; */
-  /* padding:5px 10px; */
+  padding:1px 5px;
   max-width:100% ;
   word-wrap: break-word !important;
 

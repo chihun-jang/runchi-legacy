@@ -33,9 +33,7 @@ draft : False
 기존의 settings에 있는 `StaticFilesStorage`를    `ManifestStaticFilesStorage`로 바꾸는 방법은
 캐싱방지 외의 장점도 있었지만 빠른 적용이 필요했기에 선택하지 않았다.
 
-===
->참고 : [Django 공식페이지](https://docs.djangoproject.com/en/3.0/ref/contrib/staticfiles/#django.contrib.staticfiles.storage.ManifestStaticFilesStorage)
-===
+  >참고 : [Django 공식페이지](https://docs.djangoproject.com/en/3.0/ref/contrib/staticfiles/#django.contrib.staticfiles.storage.ManifestStaticFilesStorage)
 
 
 ### static file versioning

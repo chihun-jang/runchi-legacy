@@ -217,9 +217,10 @@
     margin-top:10px;
 }
 .main_post_date > span{
-    margin-right:20px;
+    margin-right:5px;
 }
 .main_post_date > svg{
+    margin-left:10px;
     margin-right:5px;
 }
 .main_post_section{

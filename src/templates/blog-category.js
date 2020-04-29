@@ -7,7 +7,7 @@ import SVG from '../components/svg'
 
 const _ = require("lodash")
 
-// 이 페이지는 Category 내부 post page
+// 이 페이지는 Category를 누른다음에 Category에 해당하는 post가 보이는 page
 const Category =  ({ pageContext, data }) => {
 
 
@@ -46,9 +46,9 @@ const Category =  ({ pageContext, data }) => {
                             {node.frontmatter.title}
                             
                             <div className={post_detail.post_date}>
-                                <span className={_.capitalize(node.frontmatter.category)}>
-                                    {_.capitalize(node.frontmatter.category)}
-                                </span>
+                                {node.frontmatter.category.map((category_item) => (
+                                    <span className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
+                                ))}
                                 
                                 <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
                             </div>
