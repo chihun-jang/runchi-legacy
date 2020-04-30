@@ -5,7 +5,6 @@ category: ['javascript']
 draft : False
 ---
 
-## JS Arguments
 
 * 매개변수 : function(parameter) 함수가 받는 자리의 이름
 

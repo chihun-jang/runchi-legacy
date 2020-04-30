@@ -6,8 +6,6 @@ draft : False
 ---
 
 
-## Fibonacci numbers
-
 피보나치 수는 F(0) = 0, F(1) = 1일 때, 1 이상의 n에 대하여 F(n) = F(n-1) + F(n-2) 가 적용되는 수 입니다.
 
 예를들어

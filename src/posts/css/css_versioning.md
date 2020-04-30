@@ -6,7 +6,7 @@ draft : False
 ---
 
 
-## CSS 수정사항이 바로 바로 반영되지 않는 경우
+### CSS 수정사항이 바로 바로 반영되지 않는 경우
 
 - 브라우저(크롬기준)에서 F12로 개발자도구를 실행시켜  Network Tab에 있는 Disable cache를 활성화시켜 사용
 - `ctrl + shift + R` 을 이용하면 Disable cache를 하지않더라도 일회용으로 강제 새로고침 가능하다.

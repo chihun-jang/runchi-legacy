@@ -5,7 +5,6 @@ category: ['javascript']
 draft : False
 ---
 
-## JS Closure
 
 내부함수가 외부함수의 맥락에 접근할수 있는 것,
 큰 size의 코드 및 고난이도의 테크닉 사용시 필수

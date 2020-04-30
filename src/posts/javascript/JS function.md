@@ -5,7 +5,6 @@ category: ['javascript']
 draft : False
 ---
 
-## JavaScript Apply
 
 ```javascript
 function sum(arg1, arg2){
