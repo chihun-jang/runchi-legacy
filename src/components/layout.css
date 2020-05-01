@@ -703,6 +703,10 @@ code[class*="language-"] span{
   white-space: pre !important;
 }
 
+code[class*="language-python"] .punctuation{
+  color:#71b3e9c2;
+}
+
 /* scrollbar custom */
 ::-webkit-scrollbar {
   height: 5px;
