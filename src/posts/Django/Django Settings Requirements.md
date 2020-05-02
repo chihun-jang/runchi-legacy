@@ -1,7 +1,7 @@
 ---
 title: "Django settings 와 requirements"
 date: "2019-02-12"
-category: ['Django']
+category: ['django']
 draft : False
 ---
 

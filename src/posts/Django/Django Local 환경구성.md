@@ -1,7 +1,7 @@
 ---
 title: "Django 로컬환경 꾸미기"
 date: "2019-02-07"
-category: ['python']
+category: ['django']
 draft : False
 ---
 

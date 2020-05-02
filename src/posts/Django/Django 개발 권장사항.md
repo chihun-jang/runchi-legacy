@@ -1,7 +1,7 @@
 ---
 title: "Django 개발 권장사항"
 date: "2019-02-07"
-category: ['Django']
+category: ['django']
 draft : False
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Django 프로젝트 구성"
 date: "2019-02-07"
-category: ['Django']
+category: ['django']
 draft : False
 ---
 

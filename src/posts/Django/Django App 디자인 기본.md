@@ -1,7 +1,7 @@
 ---
 title: "Django App 디자인 기본"
 date: "2019-02-07"
-category: ['Django']
+category: ['django']
 draft : False
 ---
 

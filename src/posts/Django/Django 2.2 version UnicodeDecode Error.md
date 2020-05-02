@@ -1,7 +1,7 @@
 ---
 title: "Django unicodeDecodeError (version 2.2)"
 date: "2019-04-04"
-category: ['Django']
+category: ['django']
 draft : False
 ---
 

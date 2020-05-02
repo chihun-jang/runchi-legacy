@@ -1,7 +1,7 @@
 ---
 title: "Django FBV(Function based View), CBV(Class based View)"
 date: "2019-04-01"
-category: ['Django']
+category: ['django']
 draft : False
 ---
 
