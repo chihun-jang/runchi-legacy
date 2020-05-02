@@ -1,7 +1,7 @@
 ---
 title: "Python Class"
 date: "2019-01-18"
-category: ['멋쟁이사자처럼','python']
+category: ['python']
 draft : False
 ---
 

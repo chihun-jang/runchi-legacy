@@ -1,7 +1,7 @@
 ---
 title: "Python mutable,immutable & Deep copy,Shallow copy"
 date: "2019-01-28"
-category: ['멋쟁이사자처럼','python']
+category: ['python']
 draft : False
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Python 내장함수"
 date: "2019-03-22"
-category: ['멋쟁이사자처럼','python']
+category: ['python']
 draft : False
 ---
 

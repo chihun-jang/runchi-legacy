@@ -1,7 +1,7 @@
 ---
 title: "Python Module"
 date: "2019-01-20"
-category: ['멋쟁이사자처럼','python']
+category: ['python']
 draft : False
 ---
 

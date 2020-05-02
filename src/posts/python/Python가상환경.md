@@ -1,7 +1,7 @@
 ---
 title: "Python 가상환경 실행하기"
 date: "2019-01-16"
-category: ['멋쟁이사자처럼','python']
+category: ['python']
 draft : False
 ---
 
