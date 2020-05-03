@@ -6,7 +6,7 @@ draft : False
 ---
 
 
-![](../../images/run_s_key.jpg)
+![run_s_key](../../images/run_s_key.jpg)
 
 내 첫 노트북으로 함께 해오던 LG gram이 예전부터 여닫는 부분이 헐거워지더니 
 
@@ -18,7 +18,7 @@ draft : False
 서비스센터에 가서 깔끔하게 수리를 하고
 집에 돌아오니 새로운 문제가 생겼다.
 
-![](../../images/battery.png)
+![battery](../../images/battery.png)
 
 * 배터리 255% 사용가능
 * 배터리 없음
@@ -34,7 +34,7 @@ draft : False
 하드웨어를 문제가 아닐까 싶었다
 
 
-![](../../images/battery_unconnect.jpg)
+![battery_unconnect](../../images/battery_unconnect.jpg)
 수리기사님의 숙제였는지
 메인보드와 연결이 안되어 있었고 
 

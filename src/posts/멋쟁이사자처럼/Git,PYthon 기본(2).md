@@ -129,13 +129,13 @@ input message
 그리고 호스팅을 위해서는 기본적으로 index.html page가 저장소에 있어야 
 github이 page를 랜더링(띄워줄수) 해줄 수 있다. 
 
-![](https://1.bp.blogspot.com/-a3FxJAvECzw/XJ8LRWskR8I/AAAAAAAA75s/7kK6f_tjV8IWoBm5N5wA5_FvtRaA4CWKQCLcBGAs/s640/github%2Bpage%25EC%2584%25A4%25EC%25A0%25951.png)
+![https://1.bp.blogspot.com/-a3FxJAvECzw/XJ8LRWskR8I/AAAAAAAA75s/7kK6f_tjV8IWoBm5N5wA5_FvtRaA4CWKQCLcBGAs/s640/github%2Bpage%25EC%2584%25A4%25EC%25A0%25951.png](https://1.bp.blogspot.com/-a3FxJAvECzw/XJ8LRWskR8I/AAAAAAAA75s/7kK6f_tjV8IWoBm5N5wA5_FvtRaA4CWKQCLcBGAs/s640/github%2Bpage%25EC%2584%25A4%25EC%25A0%25951.png)
 github에 만든 원격 저장소의 설정 탭으로 들어가기
 
-![](https://1.bp.blogspot.com/-Ltt2OmjwLGA/XJ8LRBOwL7I/AAAAAAAA75k/6kDt458C-x0a4RVMZJEHd4p-yT8dP7qwQCLcBGAs/s640/git%2Bpage%25EC%2584%25A4%25EC%25A0%25952.png)
+![https://1.bp.blogspot.com/-Ltt2OmjwLGA/XJ8LRBOwL7I/AAAAAAAA75k/6kDt458C-x0a4RVMZJEHd4p-yT8dP7qwQCLcBGAs/s640/git%2Bpage%25EC%2584%25A4%25EC%25A0%25952.png](https://1.bp.blogspot.com/-Ltt2OmjwLGA/XJ8LRBOwL7I/AAAAAAAA75k/6kDt458C-x0a4RVMZJEHd4p-yT8dP7qwQCLcBGAs/s640/git%2Bpage%25EC%2584%25A4%25EC%25A0%25952.png)
 밑으로 내려보면 GitHub Pages 가 있는데 master branch로 설정해준다
 
-![](https://4.bp.blogspot.com/-KfuNqbTsybM/XJ8LRChrS3I/AAAAAAAA75o/J1vfXp7myWAgzQ-7ExwAmDsSvcHk1q6ewCLcBGAs/s640/git%2Bpage%25EC%2584%25A4%25EC%25A0%25953.png)
+![https://4.bp.blogspot.com/-KfuNqbTsybM/XJ8LRChrS3I/AAAAAAAA75o/J1vfXp7myWAgzQ-7ExwAmDsSvcHk1q6ewCLcBGAs/s640/git%2Bpage%25EC%2584%25A4%25EC%25A0%25953.png](https://4.bp.blogspot.com/-KfuNqbTsybM/XJ8LRChrS3I/AAAAAAAA75o/J1vfXp7myWAgzQ-7ExwAmDsSvcHk1q6ewCLcBGAs/s640/git%2Bpage%25EC%2584%25A4%25EC%25A0%25953.png)
 그럼 내 원격저장소의 github page가 만들어지고 URL주소가 할당된다
 
 
