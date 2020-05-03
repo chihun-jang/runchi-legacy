@@ -5,13 +5,12 @@ category: ['diary']
 draft : False
 ---
 
-
-![run_s_key](../../images/run_s_key.jpg)
-
 내 첫 노트북으로 함께 해오던 LG gram이 예전부터 여닫는 부분이 헐거워지더니 
 
 저장을 많이해서인지 ㄴㄴ를 많이 해서인지 모르겠지만
 기어코 s키까지 빠져버렸다. 
+
+![run_s_key](../../images/run_s_key.jpg)
 
 역시 gram은 내구성이 조금 아쉬운 것 같다 😥
 
