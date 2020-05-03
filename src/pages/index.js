@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => {
           />
 
         <h2 className={main.main_title}>
-        모든 글
+        최신 글
         </h2>
         <span className={main.main_postcnt}>({allPosts.length} Posts)</span>
       
@@ -105,7 +105,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
 query MyQuery {
-  allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}},sort: {order: DESC, fields: frontmatter___date}) {
+  allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}},sort: {order: DESC, fields: frontmatter___date},limit: 9) {
     totalCount
     edges {
       node {

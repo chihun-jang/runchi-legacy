@@ -17,6 +17,8 @@ module.exports = {
         //     facebookAppId:'',
         // },
         // ga:'',
+      
+       
     },
     plugins: [
         {
@@ -47,7 +49,8 @@ module.exports = {
                             // It's important to specify the maxWidth (in pixels) of
                             // the content container as this plugin uses this as the
                             // base for generating different widths of each image.
-                    
+                            maxWidth:1200,
+                            
                             // 사용방법은 ![alt text](image-name.jpg)
                         },
                     },
@@ -86,9 +89,7 @@ module.exports = {
                     // 아래는 " " 와 같은 애들이 인쇄(보여질때) 불확실하게 보여지는 부분을 확실하게 규정
                     {
                         resolve: 'gatsby-remark-smartypants',
-                        options: {
-                            dashes: 'oldschool',
-                        },
+                       
                     },
                     // 이거는 마크다운 제목에 id를 자동추가하고 svg아이콘이 포함된 a요소를 클릭하면 자동 링킹
                     'gatsby-remark-autolink-headers',
