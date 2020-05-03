@@ -110,7 +110,7 @@ query MyQuery {
     edges {
       node {
         id
-        excerpt
+        excerpt(truncate: true, pruneLength: 200)
         html
         frontmatter {
           title
