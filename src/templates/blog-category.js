@@ -50,7 +50,7 @@ const Category =  ({ pageContext, data }) => {
                                     <span className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
                                 ))}
                                 
-                                <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
+                                <span><SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}</span>
                             </div>
 
                         </h2>

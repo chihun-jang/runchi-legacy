@@ -52,7 +52,10 @@ const CategoryList = (
                 {categories.allMarkdownRemark.group.map(item => (
                     <Link to={`/category/${_.kebabCase(item.fieldValue)}/`} key={item.fieldValue}>
                         <div className={category.category_item }>
-                            <div className={_.capitalize(item.fieldValue)}>{_.capitalize(item.fieldValue)}</div>{' '}
+                            <div className={_.capitalize(item.fieldValue)}>
+                                {item.fieldValue === '멋쟁이사자처럼'
+                                    ? '멋사'
+                                    :_.capitalize(item.fieldValue)}</div>{' '}
                             <span className={_.capitalize(item.fieldValue)}>{item.totalCount}</span>
                         </div>
                     </Link>

@@ -697,7 +697,10 @@ code[class*="language-"]{
   padding:5px 10px;
   display: inline-block;
   margin:10px 0;
+  max-width: 100%;
+  
 }
+
 .gatsby-highlight, code[class*="language-"],
 code[class*="language-"] span{
   white-space: pre !important;
@@ -754,5 +757,20 @@ code[class*="language-python"] .punctuation{
   color:rgba(93, 93, 218, 0.687)
 }
 .Network{
-  color:#1bac7ec9;
+  color:#ecda35cc;
+}
+
+.Python{
+  color:#3383ecab;
+}
+
+.Django{
+  color:rgba(25, 155, 105, 0.616)
+}
+.멋쟁이사자처럼{
+  color:rgba(255, 156, 27, 0.788)
+}
+
+.Reactnative{
+  color:rgba(7, 173, 179, 0.87);
 }

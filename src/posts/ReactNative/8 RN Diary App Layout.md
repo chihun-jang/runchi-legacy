@@ -5,7 +5,7 @@ category: ['멋쟁이사자처럼','ReactNative']
 draft : False
 ---
 
-# #8 RN Diary App 의 Layout만들기
+### 8 RN Diary App 의 Layout만들기
 
 멋-하
 TodoApp으로 기본적인 RN의 구조에 대해서 공부하고
