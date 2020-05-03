@@ -40,14 +40,14 @@ const Category =  ({ pageContext, data }) => {
     return (
         <Layout>
             {posts.map(({ node }) => (
-                <div className={post_detail.post_container} key={node.fields}>
+                <div className={post_detail.post_container} key={node.fields.slug}>
                     <Link to={node.fields.slug}>
                         <h2 className={post_detail.post_title}>
                             {node.frontmatter.title}
                             
                             <div className={post_detail.post_date}>
                                 {node.frontmatter.category.map((category_item) => (
-                                    <span className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
+                                    <span key={category_item} className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
                                 ))}
                                 
                                 <span><SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}</span>

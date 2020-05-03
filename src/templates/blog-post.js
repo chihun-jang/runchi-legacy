@@ -31,7 +31,7 @@ export default ({ data }) => {
            
             <div className={post_detail.post_date}>
               {post.frontmatter.category.map((category_item) => (
-                <span className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
+                <span key={category_item}className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
               ))}
               <span><SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {post.frontmatter.date}</span>
             </div>
