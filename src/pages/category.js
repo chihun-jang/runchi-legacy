@@ -45,7 +45,7 @@ const CategoryList = (
                 title="Category"
                 description="주제별 카테고리 확인" />
 
-            <h1 className={category.category_title}>Category</h1>
+            <h1 className={category.category_title}>Category<span>- {categories.allMarkdownRemark.group.length}</span></h1>
 
             <section className={category.category_section}>
 

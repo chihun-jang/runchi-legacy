@@ -39,6 +39,7 @@ const Category =  ({ pageContext, data }) => {
     const posts = data.allMarkdownRemark.edges
     return (
         <Layout>
+            <div className={post_detail.posts_cnt}>total : {posts.length}</div>
             {posts.map(({ node }) => (
                 <div className={post_detail.post_container} key={node.fields.slug}>
                     <Link to={node.fields.slug}>

@@ -3,6 +3,13 @@
     text-shadow: 2px 2px 4px rgba(0,0,0,.3), -2px -2px 4px rgba(255,255,255,1);
     font-size:32px;
     /* display: inline-block; */
+}
+.category_title > span{
+    font-size:16px;
+    margin-left:20px;
+    color:#777;
+    font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0,0,0,.3), -2px -2px 4px rgba(255,255,255,1);
 
 }
 .category_section{
@@ -11,8 +18,8 @@
     justify-content: center;
 }
 .category_item{
-    width:90px;
-    height:90px;
+    width:100px;
+    height:100px;
     display: inline-flex;
     justify-content: center;
     text-align: center;
