@@ -14,7 +14,6 @@ const SecondPage = () => (
         <h5>About 페이지도 꾸며갈 예정입니다. </h5>
             <h5>문의사항은 jang.chihun@gamil.com으로 말씀해주시면 감사하겠습니다.!</h5>
         {/* <p>Runchi Blog를 찾아주셔서 감사합니다. 🙂</p> */}
-        
     </Layout>
 )
 

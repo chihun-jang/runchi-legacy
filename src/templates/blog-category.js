@@ -92,7 +92,7 @@ export default Category
 export const categoryposts = graphql`
         query($category: String) {
             allMarkdownRemark(
-                sort: { fields: [frontmatter___date], order: DESC },
+                sort: { fields: [frontmatter___date,frontmatter___title], order: [DESC,DESC] }
                 filter: {frontmatter: {draft: {eq: false}, category: {in: [$category]}}}
             ) {
                 totalCount

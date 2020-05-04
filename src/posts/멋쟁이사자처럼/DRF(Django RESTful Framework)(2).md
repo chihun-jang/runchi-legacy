@@ -22,7 +22,7 @@ URL로 접속한다 → URL에서 처리해줄 View를 작성한다 → View에�
 
 일단! 우리가 Django에서 만들어 주었던 Template부분이 Django REST Framework에서는 다른 애에게 맡기게 될것이므로 View와 Model을 위주로 구성을 하게 될 것이라는것을 알아 둡시다
 
-참 `pip install djangorestframework`이런것들은 생갹하겠습니다 
+참 `pip install djangorestframework`이런것들은 생각하겠습니다 
 
 ***
 

@@ -105,7 +105,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
 query MyQuery {
-  allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}},sort: {order: DESC, fields: frontmatter___date},limit: 9) {
+  allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}},sort: {order: [DESC,DESC] fields: [frontmatter___date,frontmatter___title]},limit: 9) {
     totalCount
     edges {
       node {
