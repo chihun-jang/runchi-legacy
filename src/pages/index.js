@@ -54,8 +54,9 @@ const IndexPage = ({ data }) => {
           />
 
         <h2 className={main.main_title}>
-        최신 글
+          최신 글
         </h2>
+
         <span className={main.main_postcnt}>({allPosts.length} Posts)</span>
       
 
@@ -67,30 +68,24 @@ const IndexPage = ({ data }) => {
 
       
         <div className={main.main_post_container} >
-      {allPosts.map(({ node }) => (
+        {allPosts.map(({ node }) => (
              
         <div className={main.main_post_section} key={node.id} >
               <Link className={main.main_post_link} to={node.fields.slug}>
-
                 <div className={main.main_post_overflow}>
-
-                      <h2 className={main.main_post_title}>
-                        {node.frontmatter.title}
-                       
-                        <div className={main.main_post_date}>
-                          {node.frontmatter.category.map((category_item)=>(
-                            <span key={category_item} className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
-                          ))}
-                          
-                          <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
-                        </div>
-                      </h2>
-
+                  <h2 className={main.main_post_title}>
+                    {node.frontmatter.title}
+                    
+                    <div className={main.main_post_date}>
+                      {node.frontmatter.category.map((category_item)=>(
+                        <span key={category_item} className={_.capitalize(category_item)}>{_.capitalize(category_item)}</span>
+                      ))}
                       
+                      <SVG name="edit" width="20px" height="20px" color="#aaa" ></SVG> {node.frontmatter.date}
+                    </div>
+                  </h2>
 
-                    
-                    
-                      <div className={main.main_post_content} dangerouslySetInnerHTML={{ __html: node.html }} />
+                  <div className={main.main_post_content} dangerouslySetInnerHTML={{ __html: node.html }} />
                 </div>    
               </Link>  
           </div>

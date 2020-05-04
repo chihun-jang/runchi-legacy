@@ -22,22 +22,21 @@ const CategoryList = (
 ) => {
 
 
-    const categories = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-            allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}},limit: 2000) {
-                group(field: frontmatter___category) {
-                    fieldValue
-                    totalCount
-                }
+const categories = useStaticQuery(graphql`
+    query {
+        site {
+            siteMetadata {
+                title
             }
         }
-    `)
-
+        allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}},limit: 2000) {
+            group(field: frontmatter___category) {
+                fieldValue
+                totalCount
+            }
+        }
+    }
+`)
 
     return (
         <Layout>

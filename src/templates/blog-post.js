@@ -16,12 +16,11 @@ export default ({ data }) => {
     // const ogImagePath = ogimage && ogimage.childImageSharp.fixed.src
 
     return (
-      <Layout >
+      <Layout>
         <SEO 
           title={post.frontmatter.title}
-          description={post.frontmatter.desc} 
+          description={post.excerpt} 
           // image={ogImagePath}
-
           />
 
 
@@ -56,6 +55,8 @@ export const query = graphql`
                {fields{
                  slug
                }
+                excerpt(pruneLength: 200)
+
                    html
                    frontmatter {
                        title
