@@ -85,7 +85,7 @@ const IndexPage = ({ data }) => {
                     </div>
                   </h2>
 
-                  <div className={main.main_post_content} dangerouslySetInnerHTML={{ __html: node.html }} />
+                  <div className={main.main_post_content} dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                 </div>    
               </Link>  
           </div>
@@ -105,7 +105,7 @@ query MyQuery {
     edges {
       node {
         id
-        excerpt(truncate: true, pruneLength: 200)
+        excerpt( pruneLength: 200)
         html
         frontmatter {
           title
