@@ -1,6 +1,5 @@
 import React,{useState, Fragment,useRef,useEffect} from "react"
-import { Link, graphql } from "gatsby"
-import Button from '@material-ui/core/Button';
+import { Link, graphql, useStaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,8 +9,8 @@ import SVG from '../components/svg'
 const _ = require('lodash')
 
 
-const DEST_POS = 316
-const BASE_LINE = 80
+// const DEST_POS = 316
+const FLAG_LINE = 80
 
 
 function getDistance(currentPos) {
@@ -24,7 +23,7 @@ const IndexPage = ({ data }) => {
 
     const countRef = useRef(1)
     const countOfInitialPost  = 9
-  const allPosts = data.allMarkdownRemark.edges
+    const allPosts = data.allMarkdownRemark.edges
 
     useEffect(() => {
       window.addEventListener(`scroll`, onScroll, { passive: false })
@@ -72,7 +71,7 @@ const IndexPage = ({ data }) => {
     const currentPos = window.scrollY + window.innerHeight
     // console.log("===", currentPos)
 
-    const isTriggerPos = () => getDistance(currentPos) < BASE_LINE
+    const isTriggerPos = () => getDistance(currentPos) < FLAG_LINE
     const doesNeedMore = () => 
       allPosts.length > countRef.current * countOfInitialPost
     return toFit(() => setCount(prev => prev + 1), {
@@ -83,64 +82,68 @@ const IndexPage = ({ data }) => {
 
   
 
-    // const emptyQuery = ""
-    // const [state, setState] = useState({
-    //   filteredData: [],
-    //   query: emptyQuery,
-    // })
+    const emptyQuery = ""
+    const [state, setState] = useState({
+      filteredData: [],
+      query: emptyQuery,
+    })
     
+    const { filteredData, query } = state
 
+    const hasSearchResults = filteredData && query !== emptyQuery
 
-
-    // const { filteredData, query } = state
-
-    // const hasSearchResults = filteredData && query !== emptyQuery
-
-    // const posts = hasSearchResults ? filteredData : allPosts
+    const posts = hasSearchResults ? filteredData : allPosts
 
     
-    // const handleInputChange = event => {
-    //     const query = event.target.value
-    //     const posts = data.allMarkdownRemark.edges || []
-    //     const filteredData = posts.filter(post => {
-    //         // destructure data from post frontmatter
-    //         const {title, category } = post.node.frontmatter
-    //         return (
+    const handleInputChange = event => {
+        const query = event.target.value
+        const posts = data.allMarkdownRemark.edges || []
+        const filteredData = posts.filter(post => {
+            // destructure data from post frontmatter
+            const {title, category } = post.node.frontmatter
+            return (
               
-    //             title.toLowerCase().includes(query.toLowerCase()) ||
-    //             category.toLowerCase().includes(query.toLowerCase()) 
-    //             // (tags &&
-    //             //     tags
-    //             //         .join('') // convert tags from an array to string
-    //             //         .toLowerCase()
-    //             //         .includes(query.toLowerCase()))
-    //         )
-    //     })
-    //     setState({
-    //         query, 
-    //         filteredData, 
-    //     })
-    // }
-  const renderPost = allPosts.slice(0, count * countOfInitialPost)
+              _.toLower(title).includes(_.toLower(query)) ||
+              _.toLower(category).includes(_.toLower(query)) 
+                // (tags &&
+                //     tags
+                //         .join('') // convert tags from an array to string
+                //         .toLowerCase()
+                //         .includes(query.toLowerCase()))
+            )
+        })
+        setState({
+            query, 
+            filteredData, 
+        })
+    }
+
+    
+  const renderPost = posts.slice(0, count * countOfInitialPost)
   return (
       <Layout>
           <SEO 
             title="Runchi-Home" 
           />
+        <div className={main.maintop_option}>
 
+        <span>
         <h2 className={main.main_title}>
-          최신 글
+          모든 글
         </h2>
 
-        <span className={main.main_postcnt}>({allPosts.length} Posts)</span>
+        <span className={main.main_postcnt}>({posts.length} Posts)</span>
+        </span>
       
 
-          {/* <input
+          <input
+              className={main.input_box}
               type="text"
-              placeholder="검색해보세요!"
+              placeholder="🔍 게시글 검색 "
               onChange={handleInputChange}
-          /> */}
+              />
 
+        </div>
       
         <div className={main.main_post_container} >
         {renderPost.map(({ node }) => (
@@ -180,7 +183,7 @@ query MyQuery {
     edges {
       node {
         id
-        excerpt( pruneLength: 200)
+        excerpt( pruneLength: 200,truncate: true)
         html
         frontmatter {
           title
@@ -195,5 +198,29 @@ query MyQuery {
   }
 }
 `
+
+
+// export const data = useStaticQuery(graphql`
+//     {
+//       allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}}, sort: {order: [DESC, DESC], fields: [frontmatter___date, frontmatter___title]}) {
+//         totalCount
+//         edges {
+//           node {
+//             id
+//             excerpt(pruneLength: 200)
+//             html
+//             frontmatter {
+//               title
+//               date
+//               category
+//             }
+//             fields {
+//               slug
+//             }
+//           }
+//         }
+//       }
+//     }
+//   `)
 
 export default IndexPage

@@ -55,7 +55,7 @@ export const query = graphql`
                {fields{
                  slug
                }
-                excerpt(pruneLength: 200)
+                excerpt(pruneLength: 200,truncate: true)
 
                    html
                    frontmatter {

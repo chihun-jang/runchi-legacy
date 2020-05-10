@@ -2,11 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import main from '../styles/main.module.css'
-
+import Search from '../components/search'
 const Header = ({ siteTitle }) => (
   <header 
     className={main.gnb_nav}
-    
   >
     <div
       className={main.gnb_container}

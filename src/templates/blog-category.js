@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { useStaticQuery,Link,graphql } from 'gatsby'
 
 import Layout from '../components/layout'
@@ -36,10 +36,54 @@ const Category =  ({ pageContext, data }) => {
     const {category} = pageContext
     const { edges, totalCount } = data.allMarkdownRemark
 
-    const posts = data.allMarkdownRemark.edges
+    const allPosts = data.allMarkdownRemark.edges
+
+    const emptyQuery = ""
+    const [state, setState] = useState({
+        filteredData: [],
+        query: emptyQuery,
+    })
+
+    const { filteredData, query } = state
+
+    const hasSearchResults = filteredData && query !== emptyQuery
+
+    const posts = hasSearchResults ? filteredData : allPosts
+
+
+    const handleInputChange = event => {
+        const query = event.target.value
+        const posts = data.allMarkdownRemark.edges || []
+        const filteredData = posts.filter(post => {
+            // destructure data from post frontmatter
+            const { title, category } = post.node.frontmatter
+            return (
+                _.toLower(title).includes(_.toLower(query)) ||
+                _.toLower(category).includes(_.toLower(query))
+                // (tags &&
+                //     tags
+                //         .join('') // convert tags from an array to string
+                //         .toLowerCase()
+                //         .includes(query.toLowerCase()))
+            )
+        })
+        setState({
+            query,
+            filteredData,
+        })
+    }
+
     return (
         <Layout>
+            <div className={post_detail.optionbar}>
             <div className={post_detail.posts_cnt}>total : {posts.length}</div>
+            <input
+                className={post_detail.input_box}
+                type="text"
+                placeholder="🔍 글 검색 "
+                onChange={handleInputChange}
+            />
+            </div>
             {posts.map(({ node }) => (
                 <div className={post_detail.post_container} key={node.fields.slug}>
                     <Link to={node.fields.slug}>
