@@ -4,7 +4,7 @@ module.exports = {
         description: `개발과 생각을 좋아하는 Runchi의 집`,
         author: `runchi`,
         siteUrl: 'https://runchi.dev',
-        image: '/static/runchi_icon-5a51cc9376d31ea6094f0eb14d587a76.jpg',
+        image: 'src/images/runchi_icon.jpg',
         meta: [],
         // keyword : ['키워드입력'],
         // comment:{
@@ -111,11 +111,11 @@ module.exports = {
                 name: `runchi-blog`,
                 short_name: `runchi`,
                 start_url: `/`,
-                background_color: `#000000`,
-                theme_color: `#000000`,
+                background_color: `#F5F6F7`,
+                theme_color: `#F5F6F7`,
                 display: `minimal-ui`,
                 // 아래는 파비콘 아이콘(굳이 사이즈를 안맞춰도 된다)
-                icon: `src/images/혁이.jpg`, // This path is relative to the root of the site.
+                icon: `src/images/runchi_icon.jpg`, // This path is relative to the root of the site.
             },
         },
 
