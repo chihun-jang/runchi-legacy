@@ -27,8 +27,8 @@ AWS의 리소스사용에 대한 **인증(Authentication)** 및 **권한부여(A
 
 #### 추가적인 IAM공부
 
-AWS시작 및 IAM 설명(슬라이드) : [AWS시작 및 IAM 설명(슬라이드)](https://www.slideshare.net/awskorea/iam-aws-aws-aws-summit-seoul-2019)
-IAM의 Policy(정책) : [IAM 의 Policy(정책)](https://musma.github.io/2019/11/05/about-aws-iam-policy.html)
+AWS시작 및 IAM 설명(슬라이드) : [https://www.slideshare.net/awskorea/iam-aws-aws-aws-summit-seoul-2019](https://www.slideshare.net/awskorea/iam-aws-aws-aws-summit-seoul-2019)
+IAM의 Policy(정책) : [https://musma.github.io/2019/11/05/about-aws-iam-policy.html](https://musma.github.io/2019/11/05/about-aws-iam-policy.html)
 
 위의 두 link를 참고하면 IAM의 사용법에 대해서 더 알아볼 수 있다. 
 간단하게 설명했던 IAM의 용도보다 훨씬 더 복잡하고 많은 기능을 부여할수 있었다. 실습을 해봐야 어느정도 구조가 머리게 그려질 것 같지만, 대략적인 이해를 해보자면 우리는 우리의 정책(Policy)을 생성할 수 있고, 이는 JSON파일내에 `Statement`,`Action`,`Resouce`와 같은 요소들로 구성되어있다.
