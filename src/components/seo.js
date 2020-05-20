@@ -85,6 +85,12 @@ function SEO({ description, lang, meta, title,image }) {
                   name: `twitter:description`,
                   content: seodescription,
               },
+              {
+                name: `naver-site-verification`,
+                content: "96c63b711f2617234bd6910199c2cf9ea2e0e037",
+              },
+           
+
           ].concat(meta)}
       />
   )
