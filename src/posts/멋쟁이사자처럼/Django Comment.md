@@ -5,6 +5,8 @@ category: ['멋쟁이사자처럼','Django']
 draft : False
 ---
 
+### Django 댓글, 대댓글 구현하기
+
 > 해당글은 기존에 modelForm을 기반으로 한 CRUD까지 했다고 가정을 하고 작성했습니다.
 👉[CRUD를 이용한 게시판만들기](https://runchi.dev/%EB%A9%8B%EC%9F%81%EC%9D%B4%EC%82%AC%EC%9E%90%EC%B2%98%EB%9F%BC/Django%20CRUD/)
 
