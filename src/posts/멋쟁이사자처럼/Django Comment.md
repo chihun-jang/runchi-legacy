@@ -1,7 +1,7 @@
 ---
 title: "Django Comment"
 date: "2020-06-02"
-category: ['멋쟁이사자처럼','Django']
+category: ['멋쟁이사자처럼','django']
 draft : False
 ---
 
