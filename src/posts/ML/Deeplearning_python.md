@@ -1,16 +1,17 @@
 ---
-title: "Deeplearning 시작전 최소한의 numpy와 matplot"
-date: "2020-06-10"
-category: ['Deeplearing',"ML"]
-draft : False
+title: 'Deeplearning 시작전 최소한의 numpy와 matplot'
+date: '2020-06-10'
+category: ['딥러닝', '머신러닝']
+draft: False
 ---
 
->물고기책을 보고 정리하는 글입니다.
+> 물고기책을 보고 정리하는 글입니다.
 
 ## Numpy
+
 딥러닝을 구성하다보면 행렬이나 array가 많이 등장하는데 numpy를 사용하면 편리한 메서드가 많이 구비되어있다.
 
-numpy에서 배열끼리의 연산은 원소수가 같다면 각 원소별로 실행이 되고, 원소 수가 다르면 실행되지않는다. 
+numpy에서 배열끼리의 연산은 원소수가 같다면 각 원소별로 실행이 되고, 원소 수가 다르면 실행되지않는다.
 그런데 이때 배열과 스칼라 값으로도 연산을 수행할수 있는데 이때는 스칼라값이 배열만큼 확장이 되고 이를 브로드캐스트라고 한다.
 
 ```python
@@ -19,29 +20,34 @@ print(x/2.0)
 ```
 
 그리고 물론 N차원 배열도 만들수있다.
+
 ```python
 A = np.array([[1, 2], [3, 4]])
 print(A.shape)
-A *10 
+A *10
 print(A)
 ```
+
 위와같이 shape를 통해서 행렬의 모양을 알아볼 수 있다.
 그리고 물론 행렬또한 브로드캐스트를 이용해서 스칼라값과의 연산이 가능하다.
 일반적으로 벡터와 행렬을 텐서(tensor)라고 부르기도 한다.
 
-* 브로드캐스트
+-   브로드캐스트
+
 ```python
 A = np.array([[1,2] , [3,4]])
 B = np.array([10,20])
 A * B
 print(A*B)
 ```
+
 이렇듯 1차원배열도 2차원 배열로 브로드캐스팅 되어서 연산된다.
 
-* 배열 조작하기
+-   배열 조작하기
+
 ```python
 X = X.flatten()
-print(X) 
+print(X)
 X[np.array([0,2,4])]
 print(X>15)
 print(X[X>15])
@@ -51,8 +57,8 @@ print(X[X>15])
 `X >2`부분은 X배열중에서 2보다 큰 index를 true로 하여 반환하는데(`[false,false, true,true]`) 이를 다시금 X의 indexing으로 넣어주게 되면 X의 값중 true에 해당하는 애들만 반환해주어 우리가 원하는 특정 index만 가져올수 있다.
 
 ## matplotlib
-딥러닝에서는 그래프와 데이터 시각화도 중요한데 matplotlib은 그래프를 그려주는 lib이다.  
 
+딥러닝에서는 그래프와 데이터 시각화도 중요한데 matplotlib은 그래프를 그려주는 lib이다.
 
 ### 👨‍💻 실습코드
 
