@@ -1,8 +1,8 @@
 ---
-title: "2-2.React-Native expo시작하기"
-date: "2019-07-20"
-category: ['멋쟁이사자처럼','ReactNative']
-draft : False
+title: '2-2.React-Native expo시작하기'
+date: '2019-07-20'
+category: ['멋쟁이사자처럼', 'reactnative']
+draft: False
 ---
 
 ### React-Native expo시작하기
@@ -16,7 +16,6 @@ npm이라는 패키지 매니저를 설치하기 위해 node.js를 다운로드 
 
 ![Untitled.png](./image/2-2/Untitled.png)
 
-
 terminal이나 cmd창을 실행해 node가 제대로 설치되었는지 버전을 확인해봅시다.
 버전 출력이 되지 않으시면 컴퓨터를 껐다가 다시 실행해보세요.
 
@@ -28,7 +27,7 @@ CRNA는 React Native 프로젝트를 시작하기 훨씬 쉽게 해주는 도구
 #CRNA 설치
 npm install -g create-react-native-app
 
-#해도 되고 안 해도 되는 과정 : 우리가 작업할 directory 생성하기 & 진입(?)하기   
+#해도 되고 안 해도 되는 과정 : 우리가 작업할 directory 생성하기 & 진입(?)하기
 mkdir myfirst_directory
 cd myfirst_directory         #tab을 누르면 자동완성기능이 있으므로 적극 활용하도록 합시다
 
@@ -42,7 +41,7 @@ template을 선택하라고 하는데, 저희는 blank를 선택할게요. 그�
 
 ![_2019-06-24__6.42.08.png](./image/2-2/_2019-06-24__6.42.08.png)
 
-`FirstProject`  입력하고 enter 해버립시다.
+`FirstProject` 입력하고 enter 해버립시다.
 
 ## 내가 만든 앱 실행하기
 
@@ -77,7 +76,7 @@ playstore에 접속해 `expo` 앱을 다운받아 주세요.
 
 ### 아이폰
 
-앱 스토어에서 `expo` 앱을 다운 받아주세요. 그리고  카메라 앱을 켜서 QR 코드를 스캔!
+앱 스토어에서 `expo` 앱을 다운 받아주세요. 그리고 카메라 앱을 켜서 QR 코드를 스캔!
 
 ![IMG_2479.png](./image/2-2/IMG_2479.png)
 

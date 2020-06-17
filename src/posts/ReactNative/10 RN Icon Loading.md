@@ -1,8 +1,8 @@
 ---
-title: "10. RN Icon & Splash"
-date: "2019-09-07"
-category: ['멋쟁이사자처럼','ReactNative']
-draft : False
+title: '10. RN Icon & Splash'
+date: '2019-09-07'
+category: ['멋쟁이사자처럼', 'reactnative']
+draft: False
 ---
 
 이번 시간에는 우리의 App에 Icon과 Loading화면(splash)을 부여해주도록 합시다. 아래 Icon과 Loading화면의 예시가 있습니다
@@ -12,23 +12,26 @@ draft : False
 ![Untitled.png](./image/10/Untitled.png)
 
 ### Loading화면
+
 ![Untitled 1.png](./image/10/Untitled 1.png)
 
-*
+\*
 
 Logo 만들기 ( 🔻 아래의 사이트를 사용하셔도 좋고 직접 Logo를 만드셔도 됩니다! )
 
-* [Amazingly Simple Graphic Design Software - Canva](https://www.canva.com/)
-* [미리캔버스 디자인 페이지](https://www.miricanvas.com/design)
-* [Log In | Wix](https://www.wix.com/logo/maker/esh/dashboard/my-logos)
-* [Create Your Logo and Corporate Identity for Free Online | Logaster](https://www.logaster.com/)
+-   [Amazingly Simple Graphic Design Software - Canva](https://www.canva.com/)
+-   [미리캔버스 디자인 페이지](https://www.miricanvas.com/design)
+-   [Log In | Wix](https://www.wix.com/logo/maker/esh/dashboard/my-logos)
+-   [Create Your Logo and Corporate Identity for Free Online | Logaster](https://www.logaster.com/)
 
 저는 위의 Site중에서 Logaster에서 Logo와 Splash(Loading 화면)를 만들어오겠습니다. 🏃‍♂️
 
 ## logo
+
 ![Untitled 2.png](./image/10/Untitled 2.png)
 
 ## splash
+
 ![Untitled 3.png](./image/10/Untitled 3.png)
 
 무료 버전이라 뒤에 워터마크가 같이 찍혔지만 이정도면 만족스럽습니다
@@ -54,10 +57,10 @@ Logo 만들기 ( 🔻 아래의 사이트를 사용하셔도 좋고 직접 Logo�
 ![Untitled 8.png](./image/10/Untitled 8.png)
 publish하면 expo앱에도 저렇게 뜹니당
 
-- background color를 통일감 있게 설정하기 위해 크롬 확장프로그램사용하기
+-   background color를 통일감 있게 설정하기 위해 크롬 확장프로그램사용하기
 
-혹시라도 splash의 크기가 작게 되면 background의 색깔과 
-우리의 splash간의 색깔차이가 발생 할수 있는데 
+혹시라도 splash의 크기가 작게 되면 background의 색깔과
+우리의 splash간의 색깔차이가 발생 할수 있는데
 
 그때 아래의 스포이드를 사용해주시면 같은 색으로 background color도 설정해줄 수 있습니당
 [ColorZilla](https://chrome.google.com/webstore/detail/colorzilla/bhlhnicpbhignbdhedgjhgdocnmhomnp)
