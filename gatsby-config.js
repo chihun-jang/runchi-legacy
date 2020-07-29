@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `Runchi-Blog`,
-        description: `개발과 생각을 좋아하는 Runchi의 집`,
+        description: `개발과 생각을 좋아하는 Runchi 블로그`,
         author: `runchi`,
         siteUrl: 'https://runchi.dev',
         image: 'src/images/runchi_icon.jpg',
@@ -17,10 +17,9 @@ module.exports = {
         //     facebookAppId:'',
         // },
         // ga:'',
-      
-       
     },
     plugins: [
+        // 파일은 인식해서 사용할수 있게 하기 위함.
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -49,8 +48,8 @@ module.exports = {
                             // It's important to specify the maxWidth (in pixels) of
                             // the content container as this plugin uses this as the
                             // base for generating different widths of each image.
-                            maxWidth:1200,
-                            
+                            maxWidth: 1200,
+
                             // 사용방법은 ![alt text](image-name.jpg)
                         },
                     },
@@ -62,15 +61,7 @@ module.exports = {
                     //     },
                     // },
 
-                    // 아래는 무슨 플러그인인지 찾아봐야겠다.
-                    // {
-                    //     resolve: `gatsby-remark-images-medium-zoom`,
-                    //     options: {
-                    //         margin: 36,
-                    //         scrollOffset: 0,
-                    //     },
-                    // },
-
+                    // iframe responsive
                     {
                         resolve: `gatsby-remark-responsive-iframe`,
                         options: {
@@ -78,6 +69,7 @@ module.exports = {
                         },
                     },
 
+                    // 코드 스타일 지정
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
@@ -89,7 +81,6 @@ module.exports = {
                     // 아래는 " " 와 같은 애들이 인쇄(보여질때) 불확실하게 보여지는 부분을 확실하게 규정
                     {
                         resolve: 'gatsby-remark-smartypants',
-                       
                     },
                     // 이거는 마크다운 제목에 id를 자동추가하고 svg아이콘이 포함된 a요소를 클릭하면 자동 링킹
                     'gatsby-remark-autolink-headers',
@@ -105,6 +96,8 @@ module.exports = {
                 head: true,
             },
         },
+
+        // 매니페스트를 설정하는 부분
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
@@ -113,11 +106,14 @@ module.exports = {
                 start_url: `/`,
                 background_color: `#F5F6F7`,
                 theme_color: `#F5F6F7`,
-                display: `minimal-ui`,
+                display: `fullscreen`, // https://web.dev/add-manifest/#display 여기를 참고해보자
                 // 아래는 파비콘 아이콘(굳이 사이즈를 안맞춰도 된다)
                 icon: `src/images/runchi_icon.jpg`, // This path is relative to the root of the site.
             },
         },
+
+        //오프라인동작(구글 라이브러리 workbox를 사용하고 서비스웤러르 통해서 파일캐싱후에 동작)
+        `gatsby-plugin-offline`,
 
         // 아래는 타이포 그래피 관련 플러그인 그런데 마땅한 타이포그래피가 없어서 일단은 내비두겠다.
         //
@@ -134,9 +130,6 @@ module.exports = {
         // 파일 인식 플러그인
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
-
-        //오프라인동작(구글 라이브러리 workbox를 사용하고 서비스웤러르 통해서 파일캐싱후에 동작)
-        `gatsby-plugin-offline`,
 
         // 사이트맵
         `gatsby-plugin-sitemap`,
@@ -161,4 +154,4 @@ module.exports = {
         // 아래요소는 우리가 지정한 특정위치에 page를 만들어 줄수 있는 플러그인.
         // gatsby-plugin-page-creator
     ],
-}
+};
