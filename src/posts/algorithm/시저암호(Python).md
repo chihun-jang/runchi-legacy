@@ -2,7 +2,7 @@
 title: '#14 알고리즘 연습 - 시저암호(Python & JS)'
 date: '2019-03-24'
 category: ['algorithm']
-draft: False
+draft: True
 ---
 
 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다.
@@ -73,17 +73,19 @@ def caesar(s, n):
 ```javascript
 function solution(s, n) {
     var mydict =
-        'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy'
-    var answer = ''
-
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxy';
+    var answer = '';
     for (var i = 0; i < s.length; i++) {
         if (s[i] === ' ') {
-            answer += ' '
+            answer += ' ';
         } else {
-            answer += mydict[mydict.indexOf(s[i]) + n]
+            answer += mydict[mydict.indexOf(s[i]) + n];
         }
     }
-
-    return answer
+    return answer;
 }
 ```
+
+-   아스키코드를 사용하면 수학적으로 범위를 벗어나는 index에 대해서 처리를 해주면 되므로,
+    사용하지 않는 코드를 참고해서 내 코드와 비교를 해보면 upper와 lower의 case를 나누게 되는경우
+    upper.includes()와 3항 연산자를 이용해서 위의 문자열 탐색의 비효율을 줄여줄 수 있을것 같다.
