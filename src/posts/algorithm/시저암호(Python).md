@@ -2,7 +2,7 @@
 title: '#14 알고리즘 연습 - 시저암호(Python & JS)'
 date: '2019-03-24'
 category: ['algorithm']
-draft: True
+draft: False
 ---
 
 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다.
