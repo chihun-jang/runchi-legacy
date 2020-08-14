@@ -5,24 +5,22 @@ category: ['os']
 draft: True
 ---
 
-메모리 관리,
+# Memory Management
 
-메모리는 주소를 통해서 접근하는 객체
+메모리는 주소를 통해서 접근할 수 있는 객체이다.
 
-1. 논리적 주소(virtual address)
-   프로세스마다 독립적으로 가지는 주소공간
-   0번지 부터 시작 **cpu가 보는 주소는 logical address**임
-2. 물리적 주소
-   메모리에 실제올라가는 위치
-
-주소바인딩 : 주소를 결정하는것
+-   논리적 주소(virtual address) : 프로세스마다 독립적으로 가지는 주소공간, **0번지 부터 시작 **cpu가 보는 주소는 logical address**임**
+-   물리적 주소 : 메모리에 실제올라가는 위치
 
 Symbolic Address(프로그래머 입장에서 문자로 이루어진 변수명 같은것을 호출) ==> Logical address(숫자로 이루어진 주소로 변환) ==> Physical address
 
-주소 바인딩 Case
+---
 
--   Compile time binding(absolute code생성)
-    컴파일 시점에 로지컬 어드레스와 같이 물리적 주소도 결정됨.(무조건 로지컬과 같은 주소를 사용하기때문에 비효율적이다, 싱글 프로세스에서 사용하던 옜방식)
+## 주소 바인딩 CASE (address binding : 주소를 결정하는 것)
+
+-   `Compile time binding`(absolute code생성)
+    compile 시점에 Logical address와 같이 물리적 주소도 결정 됨.(무조건 Logical과 같은 주소를 사용하기때문에 비효율적이다, 싱글 프로세스에서 사용하던 옜방식)
+
 -   load time binding(relocatable code)
     프로그램이 시작해서 메모리에 올라갈때 물리적 주소 결정( 당시 비어있는 mem의 주소부터 올리기 시작한다. )
 -   Execution time binding(run time binding) -- 현대의 방법
@@ -167,3 +165,122 @@ Two -level page Table에서 안쪽테이블은 Page Frame과 크기가 같다.
 | ---------- | ---------- | ---------- |
 | p1         | p2         | d          |
 | 10         | 10         | 12         |
+
+페이지 테이블을 2단계만 쓰는게 아니라 다단계로 쓸수 있다.
+프로그램의 주소공간이 넓기떄문에 여러 단계로 사용할 수 있는데, 그러면 테이블을 위한 공간을 줄일수 있고, 여러 테이블을 거쳐야하고, 메모리도 그만큼 여러번 접근해야한다. ==> 오버헤드가 크다
+
+4단계 table을 사용하는 경우에도 TLB 캐시메모리를 통해서 시간을 단축 할수 있다.
+(이떄 TLB를 통해서 탐색을 하는 비율이 크면 클수록 탐색에 걸리는 시간은 그 TLB의 탐색시간과 가까워지는데, 이 계산에서 유의해야할 점은 TLB에 주소가 없는 경우에도 탐색후에 결정해야하기때문에 탐색 시간이 소요된다.)
+
+Memory Protection
+Page Table의 각 entry마다 아래의 bit를 둔다
+
+Protection bit
+: page에 대한 접근 권한(read/write /read-only) - 해당 page에 대해서 연산권한을 나타내기 위해서
+
+Valid-invalid bit
+: valid 는 해당 주소의 frame에 그 프로세스를 구성하는 유효한 내용이 잇음,
+invalid는 해당주소의 frame에 유효한 내용이 없음(해당 페이지가 메모리에 올라와 있지 않고 swap area에 잇는경우) 을 뜻함
+
+Valid / Invalid Bit in a Page Table
+
+PAGE Table에는 Bit 표시로 Valid invalid를 나타낼수 있는데 이는 Page영역이 사용되지 않거나, 메모리에 올라가 있지 않은 경우를 구분해 줄수 있다.
+
+## Inverted Page Table
+
+:Page table이 매우 큰 이유
+_ 모든 process 별로 그 logical address에 대응하는 모든 page에 대해 page table entry가 존재
+_ 대응하는 page가 메모리에 있든 아니든 간에 page table에는 entry로 존재
+
+따라서 시스템안에 pagetable이 딱1개 존재한다.
+물리적인 mem의 frame 갯수만큼 entry가 존재하게 된다.
+따라서 entry에 들어가는 주소도 물리적 1:1로 mem의 위치에들어가는 logical mem의 주소를 적어준다.
+
+이떄 탐색하는 방법은 logical address가 주어지면 page table에서 위에서부터 아래로 순서대로 일치하는 주소를 다 찾아봐야한다.
+따라서 공간적인 이점은 있을지 몰라도 시간적인 이점은 사라진다.
+
+그리고 추가적으로 process id도 같이 저장을 해주어 어떤 process의 logical address인지를 page table에 적어주고 그 뒤에는 physical address의 위치를 작성해준다.
+
+따라서 이때 오래걸리는 시간을 줄이기 위해서 associative register를 사용해서 병렬적으로 탐색한다. (비쌈)
+
+## Shared Page
+
+(Re- entrant Code ( = Pure code))
+다른 프로세스와 공유할수 있는 page가 있다.
+프로그램마다 code의 내용이 같을 수도 있을텐데, 그러면 같은 Frame으로 맵핑시켜서 올려 놓는다
+
+page들을 read-only로 셋팅하고 하나의 code만 메모리에 올림,
+(eg. text editors, compilers, widow systems)
+
+Shared code 는 모든 프로세스의 logical address space 에서 동일한 위치에 있어야 함,
+
+Private code and date
+shared code와는 다르게 private code and data는 독자적으로 mem에 올린다.
+Private data는 logical address의 아무곳에나 와도 무방하다.
+
+### Segmentation
+
+프로그램은 의미단위인 여러개의 segment로 구성, 일반적으로 code, data,stack부분이 하나씩의 segment로 정의됨
+
+## Segmentation Architecture
+
+Logical address 는 다음의 두가지로 구성,
+
+-   segment table
+    base - 물리적 주소의 시작위치
+    limit 세그먼트의 길이,(의미 단위로 자른거라서 균일하지 않다.)
+
+-   Segment-table base register (STBR)
+    : 물리적 메모리에서의 segment table의 위치
+-   Segment-table length register (STLR)
+    : 프로그램이 사용하는 segment의 수
+    segment number s is legal if s < STLR
+
+장점 : 각 세그먼트 별로 protection bit가 있음,
+Each entry :
+valid bit = 0 => illegal segment
+Read/Write/Execution 권한 bit을 부여해주기 쉽다.
+
+Sharing
+shared segment
+same segment number
+segment는 의미 단위이기땜에 공유와 보안에 있어 paging보다 훨씬 효과적이다
+
+단점 : 의미단위의 분할 ==> 중간중간 사용하지 않는 조각이 발생하고 first fit이나 best fit기법을 이용해야한다.
+
+external fragmentation 발생
+(가변분할방식과 동일한 문제 발생)
+
+segment table의 경우에는 segment의 갯수만큼 entry가 만들어진다.
+
+segment의 주소가 떨어져있는 거리가 limit보다 작아야지 주소변환을 해주고 아니게 되면 boundary를 넘어선게 되므로 trap을 발생시켜준다(addressing error)
+
+seg vs Paging
+
+의미단위로 할때는 seg가 유리하고,
+동일한 크기로 작업을 할 경우에는 paging이 유리하다. (왜냐면 external frag가 발생하기때문에)
+
+table의 메모리 낭비도 seg가 더 적다
+
+Sharing of Seg
+(paging과 유사한 방법으로 진행된다.)
+
+## Seg + Paging = Paged Segmentation
+
+세그먼트 하나가 여러개의 page로 구성 된다.
+
+segment-table entry 가 segment의 base addres 를 가지고 있는 것이 아니라, segment를 구성하는 page table의 base address를 가지고있다.
+==> 따라서 메모리에 올라갈때 allocation문제가 없다.
+
+의미단위로 공유나 보안은 seg단위에서 하므로 이또한 유리하다
+이 또한 페이지별로 물리적 mem에 다른 위치로 올라가게된다.
+
+Mem manage에서 OS의 역할 : 없다
+
+이 모든 것들은 하드웨어가 해주는 역할이다.
+CPU가 프로세스를 하면서 메모리 접근을 해야하면
+프로세스가 CPU를 점유 하고있었으면 주소변환을 할때마다 OS에 접근하는 것은 말이 안된다.
+
+IO장치에 접근할때는 OS를 건들지만, 하드웨어에서 주소변환을 해서 넘겨준다.
+
+운영체제도 하나의 프로그램이기때문에 CPU를 잡으면 instruction을 실행하는 것은 다른 프로그램들과 다른 것은 없다.
