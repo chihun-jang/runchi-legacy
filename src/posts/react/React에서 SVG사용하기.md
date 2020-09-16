@@ -30,7 +30,7 @@ img file을 쓰다보면 png, jpg, svg와 같은 확장자를 많이 볼 수 있
 
 그러면 본격적으로 사용을 해보자!
 
-## 1. <img> tag 사용하기
+## 1. `<img>` tag 사용하기
 
 ```javascript
 <img src={require('경로')} />
@@ -38,7 +38,7 @@ img file을 쓰다보면 png, jpg, svg와 같은 확장자를 많이 볼 수 있
 
 ---
 
-## 2. <svg> component 생성하기
+## 2. `<svg>` component 생성하기
 
 ```javascript
 const svg = {
@@ -73,7 +73,7 @@ const SVG = props => {
 
 ---
 
-## 3. ReactComponent 이용하기
+## 3. `ReactComponent` 이용하기
 
 ```javascript
 import { ReactComponent as MySvg } from '../../Images/Basic/mysvg.svg';
