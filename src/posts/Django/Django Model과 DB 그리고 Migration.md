@@ -1,7 +1,7 @@
 ---
 title: 'Django Model과 DB 그리고 Migration'
 date: '2020-09-05'
-category: ['Djagno', '멋쟁이사자처럼']
+category: ['django', '멋쟁이사자처럼']
 draft: False
 ---
 

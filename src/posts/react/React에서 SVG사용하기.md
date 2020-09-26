@@ -1,7 +1,7 @@
 ---
 title: 'React에서 SVG사용하기'
 date: '2020-09-17'
-category: ['React']
+category: ['react']
 draft: False
 ---
 
