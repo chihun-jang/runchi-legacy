@@ -153,5 +153,6 @@ module.exports = {
 
         // 아래요소는 우리가 지정한 특정위치에 page를 만들어 줄수 있는 플러그인.
         // gatsby-plugin-page-creator
+        `gatsby-plugin-styled-components`,
     ],
 };
