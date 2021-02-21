@@ -8,12 +8,12 @@ public_folder: /img
 collections:
     - name: 'blog'
       label: 'Blog'
-      folder: 'posts/blog'
+      folder: 'src/posts/blog'
       create: true
       slug: '{{slug}}'
       fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Date', name: 'date', widget: 'datetime' }
+          - { label: 'Date', name: 'date', widget: 'date' }
           - {
                 label: 'Tags',
                 name: 'category',
@@ -22,4 +22,9 @@ collections:
             }
           - { label: 'Draft', name: 'draft', widget: 'boolean', default: true }
           - { label: 'Body', name: 'body', widget: 'markdown' }
-          - { label: 'thumbnail Image', name: 'thumbnail', widget: 'image' }
+          - {
+                label: 'thumbnail Image',
+                name: 'thumbnail',
+                widget: 'image',
+                required: false,
+            }
