@@ -9,9 +9,17 @@
 
 ## 디자인
 
--   neumorphism
-
+-   neumorphism -> Glass
 ###### created by chihun
+
+만들면서 배운점:
+position:absolute는 z-index에서 상위를 먹는 줄 알았는데
+display flex로 주게되면 하위 자식들이 absolute와 같은 요소들과 견주어도 z-index설정이 가능해진다.
+
+HTML + CSS 
+총 이용자 수에 대한 통계
+내가 가장 잘하는 것 구글링으로 해결하는 
+마인드 : 디자이너의 의도를 최대한 구현해줄 수 있는 FE가 되자
 
 <!-- <p align="center">
       <a href="https://www.gatsbyjs.org">
@@ -109,3 +117,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 AUTO-GENERATED-CONTENT:END -->
+

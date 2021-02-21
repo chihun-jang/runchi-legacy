@@ -1,11 +1,12 @@
 ---
-title: "Cloud Trail"
-date: "2020-05-19"
+title: 'Cloud Trail'
+date: '2020-05-19'
 category: ['AWS']
-draft : False
+draft: False
 ---
 
 ### Cloud Trail
+
 **Cloud trail** 기능은 말 그대로 특정 리전에서 일어나는 event같은것들을 추적해서 **_log_**를 남겨주는 역할을 한다.
 trail을 생성 할때 region의 범위도 체크할수 있고, 이벤트의 범위또한 제한할수 있는데(이떄 설정하는 옵션에 따라 **추가비용**이 부과된다), 이러한 log들은 기본적으로 **`AWS S3 buckets`**에 저장이 되고 S3 buckets 사용요금은 또! **별도**로 부과된다
 

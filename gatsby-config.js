@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
-        title: `Runchi-Blog`,
-        description: `개발과 생각을 좋아하는 Runchi 블로그`,
+        title: `Runchi`,
+        description: `FrontEnd, 개발을 하면서 배우는 여러가지, ML을 정리하고 마음대로 만들어 나가는 Blog`,
         author: `runchi`,
         siteUrl: 'https://runchi.dev',
         image: 'src/images/runchi_icon.jpg',
@@ -18,8 +18,14 @@ module.exports = {
         // },
         // ga:'',
     },
+
     plugins: [
-        // 파일은 인식해서 사용할수 있게 하기 위함.
+        // 편집기
+        `gatsby-plugin-netlify-cms`,
+        `gatsby-plugin-styled-components`,
+        // 스타일드 컴포넌트
+
+        // 파일을 인식해서 사용할수 있게 하기 위함.
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -41,6 +47,14 @@ module.exports = {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
+                    // {
+                    //     resolve: `gatsby-remark-highlight-code`,
+                    //     options: {
+                    //         terminal: 'carbon',
+                    //         theme: 'dracula',
+                    //     },
+                    // },
+
                     {
                         // 마크다운 내부에 쓰는 이미지는 lazy load를 사용할수없다.
                         resolve: `gatsby-remark-images`,
@@ -101,30 +115,34 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `runchi-blog`,
-                short_name: `runchi`,
+                name: `Runchi`,
+                short_name: `Runchi`,
                 start_url: `/`,
                 background_color: `#F5F6F7`,
                 theme_color: `#F5F6F7`,
-                display: `fullscreen`, // https://web.dev/add-manifest/#display 여기를 참고해보자
+                display: `standalone`, // https://web.dev/add-manifest/#display 여기를 참고해보자
+                // standalone, fullscreen, minimal-ui, browser
                 // 아래는 파비콘 아이콘(굳이 사이즈를 안맞춰도 된다)
                 icon: `src/images/runchi_icon.jpg`, // This path is relative to the root of the site.
             },
         },
 
-        //오프라인동작(구글 라이브러리 workbox를 사용하고 서비스웤러르 통해서 파일캐싱후에 동작)
+        //오프라인동작(구글 라이브러리 workbox를 사용하고 서비스워커 통해서 파일캐싱후에 동작)
         `gatsby-plugin-offline`,
 
         // 아래는 타이포 그래피 관련 플러그인 그런데 마땅한 타이포그래피가 없어서 일단은 내비두겠다.
         //
-        {
-            resolve: `gatsby-plugin-typography`,
-            options: {
-                pathToConfigModule: `src/utils/typography`,
-            },
-        },
-        // 이건 다이나믹 head
+        // {
+        //     resolve: `gatsby-plugin-typography`,
+        //     options: {
+        //         pathToConfigModule: `src/utils/typography`,
+        //     },
+        // },
+
+        // 이건 dynamic head를 위해
         `gatsby-plugin-react-helmet`,
+
+        // 얘는 js lib중 loadsh를 사용하기 위함.
         `gatsby-plugin-lodash`,
 
         // 파일 인식 플러그인
@@ -153,6 +171,5 @@ module.exports = {
 
         // 아래요소는 우리가 지정한 특정위치에 page를 만들어 줄수 있는 플러그인.
         // gatsby-plugin-page-creator
-        `gatsby-plugin-styled-components`,
     ],
 };

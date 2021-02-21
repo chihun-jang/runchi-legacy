@@ -1,7 +1,7 @@
 ---
 title: "Vanilla-JS-Swipe"
 date: "2020-03-28"
-category: ['javascript']
+category: ['Javascript','FrontEnd']
 draft : False
 ---
 

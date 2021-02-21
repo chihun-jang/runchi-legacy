@@ -1,0 +1,344 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: #f5f6f7;
+}
+
+/* code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+} */
+
+/* 초기화 코드 */
+/* by - https://meyerweb.com/ */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* box-sizing */
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+ul,
+ol,
+li {
+    list-style-type: none;
+}
+
+/* Global font-size */
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.6rem;
+}
+
+/* 높이관련 */
+#root {
+    min-height: 100%;
+}
+html {
+    height: 100%;
+}
+/* link 관련 초기화 */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 커스텀 layout 설정 */
+
+/* 커스텀 layout */
+
+@font-face {
+    font-family: 'GmarketSansB';
+    src: local('../asset/font/GmarketSansTTFBold.ttf');
+}
+
+@font-face {
+    font-family: 'GmarketSansM';
+    src: local('../asset/font/GmarketSansTTFMedium.ttf');
+}
+
+@font-face {
+    font-family: 'GmarketSansL';
+    src: local('../asset/font/GmarketSansTTFLight.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* 가독성을 고려한 기본 설정 코드 */
+    font-family: 'GmarketSansM';
+
+    line-height: 1.6 !important;
+    text-rendering: optimizeLegibility;
+    text-shadow: 0 0 0.1rem transparent;
+    letter-spacing: -0.04rem;
+
+    white-space: pre-line !important;
+    /* 줄바꿈 가독성을 높이기 위해 적용 */
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+/* 아래는 code style설정 CSS */
+/* :not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+    background-color: #000000b4;
+    white-space: pre-line;
+    padding: 0.1rem 0.5rem;
+    max-width: 100%;
+}
+
+code[class*='language-'] {
+    color: white;
+
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin: 1rem 0;
+    max-width: 100%;
+}
+
+.gatsby-highlight,
+code[class*='language-'],
+code[class*='language-'] span {
+    white-space: pre !important;
+}
+
+code[class*='language-python'] .punctuation {
+    color: #71b3e9c2;
+} */
+
+code[class*='language-'],
+pre[class*='language-'] {
+    padding: 0.15rem 0.5rem !important;
+    white-space: break-spaces !important;
+    /* 줄바꿈 가독성을 높이기 위해 적용 */
+    font-family: 'GmarketSansM' !important;
+}
+/* 스크롤바 커스텀 */
+/* scrollbar custom */
+::-webkit-scrollbar {
+    height: 0rem;
+    width: 0rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(245, 223, 77, 0.8);
+    border-radius: 0.1rem;
+}
+
+/* RGB 245 223 77 */
+/* 2021컬러 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    font-weight: bold;
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3),
+        -1.5px -1.5px 3px rgba(255, 255, 255, 1);
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+em {
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.3),
+        -0.5px -0.5px 1px rgba(255, 255, 255, 1);
+}
+
+li:before {
+    display: inline-block;
+    content: '';
+
+    /* width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: black; */
+}
+
+table {
+    width: 100%;
+
+    background: white;
+    /* rgba(199, 245, 147, 0.4), 
+     rgba(245, 211, 162, 0.4)*/
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.2)
+    );
+    border-radius: 1.5rem;
+}
+
+tr {
+    border-bottom: 1px solid #00000042;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+th,
+td {
+    text-align: center;
+    flex: 1;
+    border-right: 1px solid #00000042;
+}
