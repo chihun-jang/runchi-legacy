@@ -2,10 +2,10 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { css } from 'styled-components';
 
-import profileImg from '../../asset/image/chihun-jang.png';
-import github from '../../asset/icon/github.png';
-import linkedIn from '../../asset/icon/linkedIn.png';
-import gmail from '../../asset/icon/gmail.png';
+import profileImg from '../../asset/icon/left_arrow_opacity.png';
+import github from '../../asset/icon/left_arrow_opacity.png';
+import linkedIn from '../../asset/icon/left_arrow_opacity.png';
+import gmail from '../../asset/icon/left_arrow_opacity.png';
 
 const Career = ({ career }) => {
     return (

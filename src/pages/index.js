@@ -4,27 +4,127 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import SVG from '../components/svg';
 import styled from 'styled-components';
 import { useAllPosts } from '../queryhooks/use-all-posts';
-import UnderLine from '../components/UnderLine';
+
+import back_arrow from '../asset/icon/left_arrow_opacity.png';
+import { COLORS, DEVICE } from '../constant';
 
 const _ = require('lodash');
 
 const IndexPage = ({ data }) => {
     const FrontEndArticle = useAllPosts(['FrontEnd'])[0].edges[0].node;
     const SubArticle = useAllPosts(['ML', 'CS', 'Diary']);
-    console.log(SubArticle, '히히');
-    // console.log(MLArticle, 'ggggggggg');
-    // const CSArticle = useAllPosts('CS').edges[0].node;
+    const categoryArr = [
+        {
+            title: 'Develop',
+            desc: '개발을 하며 알게된 것들',
+            cnt: '2',
+        },
+        { title: 'DayMood', desc: '일상 생활을 하며 생각을 한 내용들' },
+        { title: 'StartUp', desc: '창업을 하며 든 생각들' },
+        { title: 'Cat', desc: '우리집 고양이들' },
+        { title: '취미', desc: '내가 좋아하는 나의 취미들' },
+    ];
 
-    // const ComooArticle = useAllPosts('Comoo').edges[0].node;
-    // const FrontEndArticle = useAllPosts()
     return (
         <>
             <SEO title="Home" />
-            <Layout>
-                <LeftSection>
+            <Layout showHeader={true}>
+                <SectionLabel style={{ marginTop: '24px' }}>
+                    추천 글
+                </SectionLabel>
+                <RecommendSection>
+                    <Link to={'/algorithm/추상화와%20캡슐화/'}>
+                        <RecommendItem>
+                            <img src={null} alt="이미지" />
+                            <div>
+                                <header>오늘의 혁이</header>
+                                <RecommendItemLabel>
+                                    <p>develop</p>
+                                    <p>2022.01.31</p>
+                                </RecommendItemLabel>
+                            </div>
+                        </RecommendItem>
+                    </Link>
+                    <Link to={'/algorithm/추상화와%20캡슐화/'}>
+                        <RecommendItem>
+                            <img src={null} alt="이미지" />
+                            <div>
+                                <header>오늘의 혁이</header>
+                                <RecommendItemLabel>
+                                    <p>develop</p>
+                                    <p>2022.01.31</p>
+                                </RecommendItemLabel>
+                            </div>
+                        </RecommendItem>
+                    </Link>
+                    <Link to={'/algorithm/추상화와%20캡슐화/'}>
+                        <RecommendItem>
+                            <img src={null} alt="이미지" />
+                            <div>
+                                <header>오늘의 혁이</header>
+                                <RecommendItemLabel>
+                                    <p>develop</p>
+                                    <p>2022.01.31</p>
+                                </RecommendItemLabel>
+                            </div>
+                        </RecommendItem>
+                    </Link>
+                    <Link to={'/algorithm/추상화와%20캡슐화/'}>
+                        <RecommendItem>
+                            <img src={null} alt="이미지" />
+                            <div>
+                                <header>오늘의 혁이</header>
+                                <RecommendItemLabel>
+                                    <p>develop</p>
+                                    <p>2022.01.31</p>
+                                </RecommendItemLabel>
+                            </div>
+                        </RecommendItem>
+                    </Link>
+                </RecommendSection>
+
+                <SectionLabel>최신 글</SectionLabel>
+
+                <RecentSection>
+                    {[1, 2, 3, 4, 5].map((item, index) => (
+                        <RecentItem>
+                            <div>
+                                <RecentItemIndex>{index + 1}</RecentItemIndex>
+                                <RecentItemThumbNail></RecentItemThumbNail>
+                                <RecentItemTitle>오늘의 일기</RecentItemTitle>
+                            </div>
+
+                            <div>
+                                <RecentItemDate>22.03.01</RecentItemDate>
+                                <RecentItemIcon src={back_arrow} />
+                            </div>
+                        </RecentItem>
+                    ))}
+                </RecentSection>
+                <SectionLabel>카테고리</SectionLabel>
+
+                <CategorySection>
+                    {categoryArr.map(category => (
+                        <Link to={'/theme/git/'}>
+                            <CategoryItem>
+                                <CategoryThumbnail src={null} />
+                                <CategoryInfo>
+                                    <header>{category.title}</header>
+                                    <p>{category.desc}</p>
+                                    <span>post - {category.cnt}</span>
+                                </CategoryInfo>
+                            </CategoryItem>
+                        </Link>
+                    ))}
+
+                    {/* <div>알고리즘,cs</div> */}
+                    {/* <div>장고</div> */}
+                    {/* <div>html,css,js</div> */}
+                    {/* <div>React,RN</div> */}
+                </CategorySection>
+                {/* <LeftSection>
                     <Article>
                         <Link to={_.toLower(FrontEndArticle.fields.slug)}>
                             <ArticleTitle>
@@ -87,7 +187,7 @@ const IndexPage = ({ data }) => {
                             </Link>
                         </SmallArticle>
                     ))}
-                </RightSection>
+                </RightSection> */}
 
                 {/* <div className={main.maintop_option}>
                 <span>
@@ -146,6 +246,7 @@ const IndexPage = ({ data }) => {
                     </div>
                 ))}
             </div> */}
+                {/* </IndexContainer> */}
             </Layout>
         </>
     );
@@ -182,6 +283,20 @@ export const query = graphql`
 
 export default IndexPage;
 
+const IndexContainer = styled.section`
+    border: 2px solid black;
+    border-radius: 40px;
+    border-top-right-radius: 0;
+    background-color: ${COLORS.primaryColor};
+`;
+const LeftRadiusBox = styled.div`
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: #90a6a2;
+    position: absolute;
+    z-index: -1;
+`;
 const LeftSection = styled.section`
     /* border: 2px solid red; */
     flex: 2;
@@ -292,29 +407,230 @@ const ArticleContent = styled.div`
     margin-top: 1.5rem;
 `;
 
-const SmallArticle = styled(Article)`
-    flex: 1;
+const SectionLabel = styled.header`
+    color: ${COLORS.textColor};
+    padding-left: 24px;
+    font-size: 2rem;
+    font-weight: 700;
+    /* border: 2px solid red; */
+    margin-top: 12px;
+`;
+const RecommendSection = styled.section`
+    /* border: 1px solid green; */
 
-    background: white;
+    padding: 16px 32px;
+    /* height: 400px; */
 
-    background: linear-gradient(
-        to right top,
-        rgba(255, 255, 255, 0.3),
-        rgba(255, 255, 255, 0.1)
-    );
-    & + & {
-        margin-top: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    align-items: center;
+    justify-content: flex-start;
+
+    & > a + a {
+        margin-left: 24px;
+    }
+`;
+const RecommendItem = styled.div`
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    /* border: 1px solid gray; */
+
+    & > img {
+        width: 240px;
+        height: 180px;
+        opacity: 0.7;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+        overflow: hidden;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 8px;
+        /* border: 1px solid gray; */
+        background-color: #000000;
+    }
+
+    /* 앨범커버의 설명이 들어가는 부분  */
+    & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        /* border: 1px solid red; */
+        margin-top: 4px;
+        color: ${COLORS.textColor};
+        padding: 4px;
+        border: 1px solid gray;
+        border-radius: 4px;
+    }
+
+    /* 앨범의 제목 */
+    & > div > header {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+`;
+const RecommendItemLabel = styled.div`
+    /* border: 1px solid gray; */
+    display: flex;
+
+    & > p {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    & > p + p {
+        margin-left: 8px;
     }
 `;
 
-const SmallArticleTitle = styled(ArticleTitle)`
-    font-size: 2rem;
+const RecentSection = styled.section`
+    /* border: 1px solid gray; */
+    padding: 0px 32px;
+`;
+const RecentItem = styled.div`
+    /* border: 1px solid gray; */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0px;
+
+    & + & {
+        border-top: 1px solid gray;
+    }
+    & > div {
+        /* border: 1px solid gray; */
+        display: flex;
+    }
+`;
+const RecentItemIndex = styled.span`
+    /* border: 1px solid gray; */
+    font-weight: 700;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+`;
+const RecentItemThumbNail = styled.div`
+    /* border: 1px solid gray; */
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    background-color: #000000;
+    border-radius: 4px;
+`;
+const RecentItemTitle = styled.div`
+    /* border: 1px solid gray; */
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+`;
+const RecentItemDate = styled.span`
+    /* border: 1px solid gray; */
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+`;
+const RecentItemIcon = styled.img`
+    width: 24px;
+    height: 24px;
+    /* border: 1px solid gray; */
+    transform: rotate(180deg);
+`;
+const CategorySection = styled.section`
+    /* border: 1px solid gray; */
+    /* overflow-x: scroll; */
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 24px 32px;
+    & > a + a {
+        margin-left: 24px;
+    }
 `;
 
-const SmallArticleInfo = styled(ArticleInfo)`
-    font-size: 1.4rem;
+const CategoryItem = styled.div`
+    width: 300px;
+
+    flex-shrink: 0;
+    color: ${COLORS.textColor};
+
+    display: flex;
+    align-items: center;
+    padding: 12px;
+
+    border: 1px solid gray;
+    border-radius: 8px;
+    /* background: linear-gradient(145deg, #292b37, #22242e); */
+    /* box-shadow: 12px 12px 24px #20222b, -12px -12px 24px #2c2e3b; */
 `;
 
-const SmallArticleContent = styled(ArticleContent)`
-    font-size: 1.4rem;
+const CategoryThumbnail = styled.img`
+    @keyframes RotateImg {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    height: 92px;
+    width: 92px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    margin-right: 12px;
+    background-color: #000000;
+
+    /* border: 1px solid gray; */
+    /* transition: all 1s linear; */
+    @media only screen and ${DEVICE.laptop} {
+        &:hover {
+            animation-duration: 3s;
+            animation-name: RotateImg;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+`;
+
+const CategoryInfo = styled.div`
+    /* border: 1px solid gray; */
+    display: flex;
+    flex-direction: column;
+
+    & > header {
+        font-size: 1.6rem;
+        font-weight: 700;
+        /* border: 1px solid gray; */
+    }
+
+    & > p {
+        font-size: 1.2rem;
+        font-weight: 500;
+        /* border: 1px solid gray; */
+        /* overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; */
+        margin: 6px 0px;
+    }
+    & > span {
+        /* border: 1px solid gray; */
+
+        font-size: 1rem;
+        font-weight: 300;
+    }
 `;

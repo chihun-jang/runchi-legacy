@@ -1,15 +1,3 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-        'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-        'Helvetica Neue', sans-serif;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    background-color: #f5f6f7;
-}
-
 /* code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
@@ -103,7 +91,6 @@ video {
     padding: 0;
     border: 0;
     font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -120,9 +107,7 @@ nav,
 section {
     display: block;
 }
-body {
-    line-height: 1;
-}
+
 ol,
 ul {
     list-style: none;
@@ -178,6 +163,7 @@ body {
 }
 html {
     height: 100%;
+    background-color: #262833;
 }
 /* link 관련 초기화 */
 a {
@@ -210,9 +196,14 @@ a {
     box-sizing: border-box;
 
     /* 가독성을 고려한 기본 설정 코드 */
-    font-family: 'GmarketSansM';
+    font-family: 'GmarketSansM', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+        'Helvetica Neue', sans-serif;
 
-    line-height: 1.6 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    line-height: 1.6;
     text-rendering: optimizeLegibility;
     text-shadow: 0 0 0.1rem transparent;
     letter-spacing: -0.04rem;
@@ -278,7 +269,7 @@ pre[class*='language-'] {
 
 /* RGB 245 223 77 */
 /* 2021컬러 */
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -288,7 +279,7 @@ strong {
     font-weight: bold;
     text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.3),
         -1.5px -1.5px 3px rgba(255, 255, 255, 1);
-}
+} */
 
 h1 {
     font-size: 3.2rem;

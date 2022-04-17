@@ -72,7 +72,6 @@ exports.createPages = async ({ graphql, actions }) => {
     );
     // Extract tag data from query
     // 카테고리 List를 들고와서 사용해주자.
-
     // Make category pages
     groups.forEach(category => {
         createPage({

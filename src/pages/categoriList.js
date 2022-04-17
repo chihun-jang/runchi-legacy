@@ -30,7 +30,8 @@ const CategoryList = () => {
 
     return (
         <Layout>
-            <SEO title="Category" description="주제별 카테고리 확인" />
+            <div>작성된 글 목록</div>
+            {/* <SEO title="Category" description="주제별 카테고리 확인" />
 
             <h1>
                 Category
@@ -53,7 +54,7 @@ const CategoryList = () => {
                         </div>
                     </Link>
                 ))}
-            </section>
+            </section> */}
         </Layout>
     );
 };
